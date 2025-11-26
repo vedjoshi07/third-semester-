@@ -1,0 +1,214 @@
+Last login: Fri Nov 21 13:38:33 on console
+vedjoshi@VEDs-MacBook-Air ~ %  mysql -u ved -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.4.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> prompt set to '24012011035_ved_joshi' \d [\D] \n>
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:20:29 2025] >
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:20:57 2025] >create database 
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:20:58 2025] >^C
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:21:01 2025] >^C
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:21:01 2025] >create database exam;
+Query OK, 1 row affected (0.026 sec)
+
+set to '24012011035_ved_joshi' (none) [Fri Nov 21 14:21:10 2025] >use exam;
+Database changed
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:21:15 2025] >create table students(
+    -> sid int primary key,
+    -> sname VARCHAR(50),
+    ->  city VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.017 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:22:29 2025] >insert into students (sid,snmae,city) values
+    -> (1,'Amit','Ahemdabad'),
+    -> (2,'Sneha','Surat'),
+    -> (3,'Rahul','Vadodara'),
+    -> (4,'Sonia','Ahmedabad')
+    -> ;
+ERROR 1054 (42S22): Unknown column 'snmae' in 'field list'
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:26:01 2025] >insert into students (sid,sname,city) values
+    -> (1,'Amit','Ahemdabad'),
+    -> (2,'Sneha','Surat'),
+    -> (3,'Rahul','Vadodara'),
+    -> (4,'Sonia','Ahmedabad')
+    -> ;
+Query OK, 4 rows affected (0.004 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:27:33 2025] >desc students;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sid   | int         | NO   | PRI | NULL    |       |
+| sname | varchar(50) | YES  |     | NULL    |       |
+| city  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.008 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:27:43 2025] >select * from students;
++-----+-------+-----------+
+| sid | sname | city      |
++-----+-------+-----------+
+|   1 | Amit  | Ahemdabad |
+|   2 | Sneha | Surat     |
+|   3 | Rahul | Vadodara  |
+|   4 | Sonia | Ahmedabad |
++-----+-------+-----------+
+4 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:28:01 2025] >create table marks(
+    ->  mid int primary key,
+    -> sid int,
+    -> subject varchar (50),
+    -> score int,
+    -> foreign key (sid) references students(sid)
+    -> );
+Query OK, 0 rows affected (0.013 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:30:15 2025] >insert into marks (mid,sid,subject,score) values
+    -> (101,1,'DBMS',85),
+    -> (102,2,'OS',78),
+    -> (103,3,'DBMS',92),
+    -> (104,1,'OS',74),
+    -> (105,4,'DBMS',88)
+    -> ;
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:34:09 2025] >desc marks;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| mid     | int         | NO   | PRI | NULL    |       |
+| sid     | int         | YES  | MUL | NULL    |       |
+| subject | varchar(50) | YES  |     | NULL    |       |
+| score   | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.003 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:34:19 2025] >select * from marks;
++-----+------+---------+-------+
+| mid | sid  | subject | score |
++-----+------+---------+-------+
+| 101 |    1 | DBMS    |    85 |
+| 102 |    2 | OS      |    78 |
+| 103 |    3 | DBMS    |    92 |
+| 104 |    1 | OS      |    74 |
+| 105 |    4 | DBMS    |    88 |
++-----+------+---------+-------+
+5 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:34:33 2025] >update students set city = 'mehsana' where sid = 1;
+Query OK, 1 row affected (0.004 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:35:37 2025] >select * from students;
++-----+-------+-----------+
+| sid | sname | city      |
++-----+-------+-----------+
+|   1 | Amit  | mehsana   |
+|   2 | Sneha | Surat     |
+|   3 | Rahul | Vadodara  |
+|   4 | Sonia | Ahmedabad |
++-----+-------+-----------+
+4 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:35:48 2025] >select s.sname,m.subject,m.score
+    -> from students s
+    -> join marks m on s.sid = m.mid;
+Empty set (0.001 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:37:28 2025] >select * from students where sname like 'S%';
++-----+-------+-----------+
+| sid | sname | city      |
++-----+-------+-----------+
+|   2 | Sneha | Surat     |
+|   4 | Sonia | Ahmedabad |
++-----+-------+-----------+
+2 rows in set (0.003 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:38:30 2025] >select mac(score) as highest_score from marks;
+ERROR 1305 (42000): FUNCTION exam.mac does not exist
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:39:35 2025] >select mac(score) as highest_score from marks;
+ERROR 1305 (42000): FUNCTION exam.mac does not exist
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:39:39 2025] >select max(score) as highest_score from marks;
++---------------+
+| highest_score |
++---------------+
+|            92 |
++---------------+
+1 row in set (0.003 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:40:09 2025] >select s.*,m.subject,m.score
+    -> from student s
+    -> join marksm on s.sid = m.sid
+    -> where m.score > (select avg(marks) from marks)
+    -> ;
+ERROR 1146 (42S02): Table 'exam.student' doesn't exist
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:42:16 2025] >select s.*,m.subject,m.score
+    -> from students s
+    -> join marks m on s.sid = m.sid
+    -> where m.score > (select avg(marks) from marks)
+    -> ;
+ERROR 1054 (42S22): Unknown column 'marks' in 'field list'
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:43:43 2025] >SELECT s.*, m.subject, m.score
+    -> from students s
+    -> JOIN marks m ON s.std = m.std
+    -> where m.score > (select avg(marks) from marks)
+    -> ;
+ERROR 1054 (42S22): Unknown column 'marks' in 'field list'
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:45:55 2025] >select * from marks where score > (select avg(marks) from marks);
+ERROR 1054 (42S22): Unknown column 'marks' in 'field list'
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:48:03 2025] >select * from marks where score > (select avg(score) from marks);
++-----+------+---------+-------+
+| mid | sid  | subject | score |
++-----+------+---------+-------+
+| 101 |    1 | DBMS    |    85 |
+| 103 |    3 | DBMS    |    92 |
+| 105 |    4 | DBMS    |    88 |
++-----+------+---------+-------+
+3 rows in set (0.003 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:48:13 2025] >DELETE FROM students WHERE sname = 'Sonia';
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`exam`.`marks`, CONSTRAINT `marks_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `students` (`sid`))
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:48:38 2025] >delete from students where sname = 'sonia';
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`exam`.`marks`, CONSTRAINT `marks_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `students` (`sid`))
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:49:16 2025] >select s.*,m.subject,m.score
+    -> from students s
+    -> JOIN marks m ON s.std = m.std
+    ->  where m.score > (select avg(score) from marks)
+    -> ;
+ERROR 1054 (42S22): Unknown column 's.std' in 'on clause'
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:51:16 2025] >select s.*,m.subject,m.score
+    -> from students s
+    -> JOIN marks m ON s.sid = m.sid
+    ->  where m.score > (select avg(marks) from marks)
+    ->  where m.score > (select avg(marks) from marks)^C
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:53:10 2025] >select s.*,m.subject,m.score
+    -> from students s
+    -> JOIN marks m ON s.sid = m.sid
+    -> where m.score > (select avg(score) from marks)
+    -> ;
++-----+-------+-----------+---------+-------+
+| sid | sname | city      | subject | score |
++-----+-------+-----------+---------+-------+
+|   1 | Amit  | mehsana   | DBMS    |    85 |
+|   3 | Rahul | Vadodara  | DBMS    |    92 |
+|   4 | Sonia | Ahmedabad | DBMS    |    88 |
++-----+-------+-----------+---------+-------+
+3 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:54:28 2025] >delete from students where sname = 'sonia';
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`exam`.`marks`, CONSTRAINT `marks_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `students` (`sid`))
+set to '24012011035_ved_joshi' exam [Fri Nov 21 14:56:36 2025] >

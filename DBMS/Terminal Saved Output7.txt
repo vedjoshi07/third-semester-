@@ -1,0 +1,570 @@
+Last login: Fri Nov  7 14:04:36 on console
+vedjoshi@VEDs-MacBook-Air ~ % mysql -u ved -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.4.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++-------------------------+
+| Database                |
++-------------------------+
+| Class_Info              |
+| college                 |
+| convergence_db          |
+| information_schema      |
+| mysql                   |
+| performance_schema      |
+| practical1              |
+| practical_1_24012011035 |
+| practical_2             |
+| practical_2_24012011035 |
+| practical_3             |
+| practical_4             |
+| practical_5             |
+| practical_6             |
+| practical_7             |
+| Stu_Info                |
+| students                |
+| sys                     |
+| testdb                  |
+| ved                     |
+| xyz                     |
++-------------------------+
+21 rows in set (0.033 sec)
+
+mysql> use practical_7;
+Database changed
+mysql> show tables
+    -> ;
+Empty set (0.003 sec)
+
+mysql> show componets;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'componets' at line 1
+mysql> desc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc empmaster;
+ERROR 1146 (42S02): Table 'practical_7.empmaster' doesn't exist
+mysql> create table empmaster;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table empmaster(
+    -> no int,
+    -> name varchar(50),
+    -> city varchar(50)
+    -> );
+Query OK, 0 rows affected (0.026 sec)
+
+mysql> prompt set to '24012011035_ved_joshi' [\d] \D \n>
+PROMPT set to 'set to '24012011035_ved_joshi' [\d] \D \n>'
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:27:29 2025 >create table EMPMASTER(
+    -> no int,
+    -> name varchar(50),
+    -> city varchar(50)
+    -> );
+ERROR 1050 (42S01): Table 'empmaster' already exists
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:28:33 2025 >insert into empmastrer values    -> (10,'Riya','Bombay'),
+    -> (20,'Rima','Delhi'),
+    -> (30,'Rekha','Bombay'),
+    -> (40,'Dhara','Ahemdabad'),
+    -> (50,'Dhaval','Jaipur');
+ERROR 1146 (42S02): Table 'practical_7.empmastrer' doesn't exist
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:31:06 2025 >insert into empmastre values
+(10,'Riya','Bombay'), (20,'Rima','Delhi'), (30,'Rekha','Bombay'), (40,'Dhara','Ahemdabad'), (50,'Dhaval','Jaipur');
+ERROR 1146 (42S02): Table 'practical_7.empmastre' doesn't exist
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:31:37 2025 >INSERT INTO empmaster VALUES
+    -> (10,'Riya','Bombay'),
+    -> (20,'Rima','Delhi'),
+    -> (30,'Rekha','Bombay'),
+    -> (40,'Dhara','Ahemdabad'),
+    -> (50,'Dhaval','Jaipur');
+Query OK, 5 rows affected (0.004 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:32:43 2025 >create table citylist(
+    -> no int,
+    -> name varchar(50)
+    -> );
+Query OK, 0 rows affected (0.008 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:34:15 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:35:53 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:35:53 2025 >CREATE PROCEDURE city_insert_datatype()
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_name VARCHAR(50);
+    ->     DECLARE v_city VARCHAR(50);
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     DECLARE cl CURSOR FOR SELECT no, name, city FROM EmpMaster WHERE city='Bombay';
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN cl;
+    ->     
+    ->     fetch_loop: LOOP
+    ->         FETCH cl INTO v_no, v_name, v_city;
+    ->         IF done THEN
+    ->             LEAVE fetch_loop;
+    ->         END IF;
+    ->         INSERT INTO CityList VALUES (v_no, v_name);
+    ->     END LOOP fetch_loop;
+    ->     
+    ->     CLOSE cl;
+    -> END$$
+Query OK, 0 rows affected (0.018 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:35:53 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:35:53 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:35:53 2025 >CALL city_insert_datatype();
+Query OK, 0 rows affected (0.007 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:36:04 2025 >call copy_bombay_data_method_A();
+ERROR 1305 (42000): PROCEDURE practical_7.copy_bombay_data_method_A does not exist
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:43:38 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >CREATE PROCEDURE city_insert_type()
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_name VARCHAR(50);
+    ->     DECLARE v_city VARCHAR(50);
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     DECLARE cl CURSOR FOR SELECT no, name, city FROM EmpMaster WHERE city='Bombay';
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN cl;
+    ->     
+    ->     read_loop: LOOP
+    ->         FETCH cl INTO v_no, v_name, v_city;
+    ->         IF done THEN
+    ->             LEAVE read_loop;
+    ->         END IF;
+    ->         INSERT INTO CityList VALUES(v_no, v_name);
+    ->     END LOOP read_loop;
+    ->     
+    ->     CLOSE cl;
+    -> END$$
+Query OK, 0 rows affected (0.026 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >-- Execute the procedure
+Query OK, 0 rows affected (0.000 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:40 2025 >CALL city_insert_type();
+Query OK, 0 rows affected (0.013 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:44:43 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:37 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:37 2025 >CREATE PROCEDURE citylist_rowtype()
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_name VARCHAR(50);
+    ->     DECLARE v_city VARCHAR(50);
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     DECLARE cl CURSOR FOR SELECT no, name, city FROM EmpMaster WHERE city='Bombay';
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN cl;
+    ->     
+    ->     myloop: LOOP
+    ->         FETCH cl INTO v_no, v_name, v_city;
+    ->         IF done THEN
+    ->             LEAVE myloop;
+    ->         END IF;
+    ->         INSERT INTO CityList VALUES(v_no, v_name);
+    ->     END LOOP myloop;
+    ->     
+    ->     CLOSE cl;
+    -> END$$
+Query OK, 0 rows affected (0.006 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:37 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:37 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:38 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.004 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:53:50 2025 >SELECT * FROM CityList;
++------+-------+
+| no   | name  |
++------+-------+
+|   10 | Riya  |
+|   30 | Rekha |
+|   10 | Riya  |
+|   30 | Rekha |
+|   10 | Riya  |
+|   30 | Rekha |
++------+-------+
+6 rows in set (0.003 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:58:06 2025 >SELECT * FROM empmaster;
++------+--------+-----------+
+| no   | name   | city      |
++------+--------+-----------+
+|   10 | Riya   | Bombay    |
+|   20 | Rima   | Delhi     |
+|   30 | Rekha  | Bombay    |
+|   40 | Dhara  | Ahemdabad |
+|   50 | Dhaval | Jaipur    |
++------+--------+-----------+
+5 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 14:59:08 2025 >TRUNCATE TABLE CityList;
+Query OK, 0 rows affected (0.024 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:01:00 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.006 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:01:09 2025 >SELECT * FROM CityList;
++------+-------+
+| no   | name  |
++------+-------+
+|   10 | Riya  |
+|   30 | Rekha |
++------+-------+
+2 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:01:15 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.002 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:01:47 2025 >SELECT * FROM CityList;
++------+-------+
+| no   | name  |
++------+-------+
+|   10 | Riya  |
+|   30 | Rekha |
+|   10 | Riya  |
+|   30 | Rekha |
++------+-------+
+4 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:01:52 2025 >TRUNCATE TABLE CityList;
+Query OK, 0 rows affected (0.008 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:01 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.004 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:07 2025 >SELECT * FROM CityList;
++------+-------+
+| no   | name  |
++------+-------+
+|   10 | Riya  |
+|   30 | Rekha |
++------+-------+
+2 rows in set (0.000 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:12 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.002 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:18 2025 >CALL citylist_rowtype();
+Query OK, 0 rows affected (0.003 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:24 2025 >SELECT * FROM CityList;
++------+-------+
+| no   | name  |
++------+-------+
+|   10 | Riya  |
+|   30 | Rekha |
+|   10 | Riya  |
+|   30 | Rekha |
+|   10 | Riya  |
+|   30 | Rekha |
++------+-------+
+6 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:02:30 2025 >CREATE TABLE Temp(
+    ->     no INT,
+    ->     company VARCHAR(50),
+    ->     salary INT
+    -> );
+Query OK, 0 rows affected (0.017 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:08:19 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:08:20 2025 >INSERT INTO Temp VALUES
+    -> (1, 'IBM', 5000000),
+    -> (2, 'GOOGLE', 7000000),
+    -> (3, 'MICROSOFT', 6000000);
+Query OK, 3 rows affected (0.003 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:08:30 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:09:12 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:09:12 2025 >CREATE PROCEDURE update_salary(IN comp_name VARCHAR(50), IN new_sal INT)
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_company VARCHAR(50);
+    ->     DECLARE v_salary INT;
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     
+    ->     DECLARE cl CURSOR FOR 
+    ->     SELECT no, company, salary 
+    ->     FROM Temp 
+    ->     WHERE company = comp_name;
+    ->     
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN cl;
+    ->     
+    ->     myloop: LOOP
+    ->         FETCH cl INTO v_no, v_company, v_salary;
+    ->         IF done THEN
+    ->             LEAVE myloop;
+    ->         END IF;
+    ->         
+    ->        
+    ->         UPDATE Temp SET salary = new_sal WHERE company = v_company;
+    ->     END LOOP myloop;
+    ->     
+    ->     CLOSE cl;
+    -> END$$
+Query OK, 0 rows affected (0.010 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:09:12 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:09:12 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:09:13 2025 >select * from temp;
++------+-----------+---------+
+| no   | company   | salary  |
++------+-----------+---------+
+|    1 | IBM       | 5000000 |
+|    2 | GOOGLE    | 7000000 |
+|    3 | MICROSOFT | 6000000 |
++------+-----------+---------+
+3 rows in set (0.007 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:10:31 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:12:50 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:12:50 2025 >CREATE PROCEDURE show_first_three()
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_name VARCHAR(50);
+    ->     DECLARE i INT DEFAULT 0;
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     DECLARE ci CURSOR FOR SELECT no, name FROM EmpMaster;
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN ci;
+    ->     
+    ->     myloop: LOOP
+    ->         FETCH ci INTO v_no, v_name;
+    ->         IF done OR i = 3 THEN
+    ->             LEAVE myloop;
+    ->         END IF;
+    ->         
+    ->         SELECT v_no AS No, v_name AS Name;
+    ->         SET i = i + 1;
+    ->     END LOOP myloop;
+    ->     
+    ->     CLOSE ci;
+    -> END$$
+Query OK, 0 rows affected (0.011 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:12:50 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:12:50 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:12:51 2025 >CALL show_first_three();
++------+------+
+| No   | Name |
++------+------+
+|   10 | Riya |
++------+------+
+1 row in set (0.009 sec)
+
++------+------+
+| No   | Name |
++------+------+
+|   20 | Rima |
++------+------+
+1 row in set (0.009 sec)
+
++------+-------+
+| No   | Name  |
++------+-------+
+|   30 | Rekha |
++------+-------+
+1 row in set (0.009 sec)
+
+Query OK, 0 rows affected (0.010 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:13:55 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:16:08 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:16:08 2025 >CREATE PROCEDURE top_five_salary()
+    -> BEGIN
+    ->     DECLARE v_no INT;
+    ->     DECLARE v_name VARCHAR(50);
+    ->     DECLARE v_salary INT;
+    ->     DECLARE v_desig VARCHAR(50);
+    ->     DECLARE v_dept INT;
+    ->     DECLARE done INT DEFAULT 0;
+    ->     
+    ->     DECLARE cl CURSOR FOR
+    ->     SELECT EmpNo, Name, Salary, Designation, DeptID
+    ->     FROM Employee
+    ->     ORDER BY Salary DESC
+    ->     LIMIT 5;
+    ->     
+    ->     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    ->     
+    ->     OPEN cl;
+    ->     
+    ->     myloop: LOOP
+    ->         FETCH cl INTO v_no, v_name, v_salary, v_desig, v_dept;
+    ->         IF done THEN
+    ->             LEAVE myloop;
+    ->         END IF;
+    ->         
+    ->         SELECT v_no AS EmpNo, v_name AS Name, v_salary AS Salary;
+    ->     END LOOP myloop;
+    ->     
+    ->     CLOSE cl;
+    -> END$$
+Query OK, 0 rows affected (0.005 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:16:08 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:16:08 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:16:09 2025 >CALL top_five_salary();
+ERROR 1146 (42S02): Table 'practical_7.employee' doesn't exist
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:17:15 2025 >CREATE TABLE IF NOT EXISTS Employee(
+    ->     EmpNo INT,
+    ->     Name VARCHAR(50),
+    ->     Salary INT,
+    ->     Designation VARCHAR(50),
+    ->     DeptID INT
+    -> );
+Query OK, 0 rows affected (0.025 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:18:43 2025 >INSERT INTO Employee VALUES
+    -> (1001, 'Riya', 5250, 'Manager', 101),
+    -> (1002, 'Rima', 10500, 'Senior Manager', 102),
+    -> (1003, 'Rekha', 12600, 'Director', 103),
+    -> (1004, 'Dhara', 6300, 'Assistant Manager', 101),
+    -> (1005, 'Anya', 8000, 'Team Lead', 104),
+    -> (1006, 'Raj', 9500, 'Senior Developer', 105),
+    -> (1007, 'Priya', 11000, 'Project Manager', 102),
+    -> (1008, 'Amit', 7200, 'Developer', 105),
+    -> (1009, 'Neha', 13500, 'Senior Director', 103),
+    -> (1010, 'Sanjay', 5800, 'Analyst', 104);
+Query OK, 10 rows affected (0.011 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:18:57 2025 >CALL top_five_salary();
++-------+------+--------+
+| EmpNo | Name | Salary |
++-------+------+--------+
+|  1009 | Neha |  13500 |
++-------+------+--------+
+1 row in set (0.004 sec)
+
++-------+-------+--------+
+| EmpNo | Name  | Salary |
++-------+-------+--------+
+|  1003 | Rekha |  12600 |
++-------+-------+--------+
+1 row in set (0.004 sec)
+
++-------+-------+--------+
+| EmpNo | Name  | Salary |
++-------+-------+--------+
+|  1007 | Priya |  11000 |
++-------+-------+--------+
+1 row in set (0.004 sec)
+
++-------+------+--------+
+| EmpNo | Name | Salary |
++-------+------+--------+
+|  1002 | Rima |  10500 |
++-------+------+--------+
+1 row in set (0.004 sec)
+
++-------+------+--------+
+| EmpNo | Name | Salary |
++-------+------+--------+
+|  1006 | Raj  |   9500 |
++-------+------+--------+
+1 row in set (0.004 sec)
+
+Query OK, 0 rows affected (0.004 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:19:05 2025 >DELIMITER $$
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:21:59 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:21:59 2025 >CREATE PROCEDURE salary_check()
+    -> BEGIN
+    ->     DECLARE total DOUBLE;
+    ->     
+    ->     START TRANSACTION;
+    ->     
+    ->     INSERT INTO EmployeeDetails VALUES (1005, 'Anya', 8000);
+    ->     
+    ->     UPDATE EmployeeDetails SET salary = salary + 7000 WHERE name = 'Riya';
+    ->     UPDATE EmployeeDetails SET salary = salary + 7000 WHERE name = 'Rima';
+    ->     
+    ->     SELECT SUM(salary) INTO total FROM EmployeeDetails;
+    ->     
+    ->     IF total > 20000 THEN
+    ->         ROLLBACK;
+    ->         SELECT 'TOTAL SALARY EXCEEDED 20000' AS message;
+    ->     ELSE
+    ->         COMMIT;
+    ->         SELECT 'Transaction Completed Successfully' AS message;
+    ->     END IF;
+    -> END$$
+Query OK, 0 rows affected (0.010 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:21:59 2025 >
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:21:59 2025 >DELIMITER ;
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:22:52 2025 >CALL salary_check();
+ERROR 1146 (42S02): Table 'practical_7.employeedetails' doesn't exist
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:22:54 2025 >CREATE TABLE EmployeeDetails( 
+    ->     emp_no INT,
+    ->     name VARCHAR(50),
+    ->     salary INT
+    -> );
+Query OK, 0 rows affected (0.011 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:23:12 2025 >INSERT INTO EmployeeDetails VALUES 
+    -> (1001, 'Riya', 5250),
+    -> (1002, 'Rima', 10500),
+    -> (1003, 'Rekha', 12600),
+    -> (1004, 'Dhara', 6300);
+Query OK, 4 rows affected (0.003 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:23:17 2025 >SELECT * FROM EmployeeDetails;
++--------+-------+--------+
+| emp_no | name  | salary |
++--------+-------+--------+
+|   1001 | Riya  |   5250 |
+|   1002 | Rima  |  10500 |
+|   1003 | Rekha |  12600 |
+|   1004 | Dhara |   6300 |
++--------+-------+--------+
+4 rows in set (0.001 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:23:23 2025 >SELECT SUM(salary) AS total_salary FROM EmployeeDetails;
++--------------+
+| total_salary |
++--------------+
+|        34650 |
++--------------+
+1 row in set (0.004 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:23:32 2025 >CALL salary_check();
++-----------------------------+
+| message                     |
++-----------------------------+
+| TOTAL SALARY EXCEEDED 20000 |
++-----------------------------+
+1 row in set (0.003 sec)
+
+Query OK, 0 rows affected (0.003 sec)
+
+set to '24012011035_ved_joshi' [practical_7] Fri Nov  7 15:23:40 2025 >

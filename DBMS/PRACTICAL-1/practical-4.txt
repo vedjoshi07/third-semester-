@@ -1,0 +1,635 @@
+24012011035_ved [(none)] Sat Sep 27 12:15:03 2025 
+>\a
+ERROR: 
+Unknown command '\a'.
+    -> \c
+24012011035_ved [(none)] Sat Sep 27 12:18:49 2025 
+>\A
+ERROR: 
+Unknown command '\A'.
+    -> \c
+24012011035_ved [(none)] Sat Sep 27 12:18:54 2025 
+>/A
+    -> /C
+    -> \C
+ERROR: 
+Usage: \C charset_name | charset charset_name
+    -> \c
+24012011035_ved [(none)] Sat Sep 27 12:19:02 2025 
+>create database practical-4;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4' at line 1
+24012011035_ved [(none)] Sat Sep 27 12:30:01 2025 
+>
+24012011035_ved [(none)] Sat Sep 27 12:30:02 2025 
+>use practical-4;
+ERROR 1049 (42000): Unknown database 'practical-4'
+24012011035_ved [(none)] Sat Sep 27 12:32:44 2025 
+>use practical_4;
+Database changed
+24012011035_ved [practical_4] Sat Sep 27 12:32:56 2025 
+>create table account_24012011035(
+    acc_no varchar(5),
+    name varchar(30),
+    city varchar(20),
+    balance decimal(10,2),
+    loan_taken varchar(5)
+    );
+Query OK, 0 rows affected (0.022 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 12:35:51 2025 
+>insert into account_24012011035 values
+  ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+  ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+  ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+  ('A004','Soni Hetal','Ahmedabad',100000,'No'),
+  ('A005','Sony Atul','Vadodara',100000,'Yes');
+Query OK, 5 rows affected (0.004 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 12:37:32 2025 
+>CREATE TABLE LOAN_24012011035(
+    -> loan_no VARCHAR(5),
+    -> acc_no VARCHAR(5),
+    -> loan_amt DECIMAL(10,2),
+    -> interest_rate DECIMAL(5,2),
+    -> loan_date DATE,
+    ->  remaining_loan DECIMAL(10,2)
+    -> );
+Query OK, 0 rows affected (0.011 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 12:38:27 2025 
+>CREATE TABLE LOAN_24012011035(
+    -> loan_no VARCHAR(5),
+    ->  acc_no VARCHAR(5),
+    -> loan_amt DECIMAL(10,2),
+    -> interest_rate DECIMAL(5,2), 
+    -> loan_date DATE,
+    -> remaining_loan DECIMAL(10,2)
+    -> ); 
+ERROR 1050 (42S01): Table 'loan_24012011035' already exists
+24012011035_ved [practical_4] Sat Sep 27 12:39:27 2025 
+>INSERT INTO LOAN_24012011035 VALUES
+    -> ('L001','A001',100000,7,STR_TO_DATE('01-JAN-2004','%d-%b-%Y'),75000),
+    -> ('L002','A002',300000,9,STR_TO_DATE('18-MAY-2004','%d-%b-%Y'),150000),
+    -> ('L003','A005',500000,11,STR_TO_DATE('15-JUN-2004','%d-%b-%Y'),300000);
+Query OK, 3 rows affected (0.002 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 12:40:34 2025 
+>CREATE TABLE INSTALLMENT_24012011035(
+    ->  LOAN_NO VARCHAR(5),
+    -> INST_NO VARCHAR(5),
+    ->  INST_DATE DATE,
+    -> AMOUNT DECIMAL(10,2));
+Query OK, 0 rows affected (0.012 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 12:41:04 2025 
+> INSERT INTO INSTALLMENT_24012011035 VALUES
+    -> ('L001','I001',STR_TO_DATE('02-FEB-2004','%d-%b-%Y'),15000),
+    -> ('L002','I002',STR_TO_DATE('18-JUN-2004','%d-%b-%Y'),20000),
+    -> ('L003','I003',STR_TO_DATE('15-JUL-2004','%d-%b-%Y'),20000);
+Query OK, 3 rows affected (0.004 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 12:46:45 2025 
+>set sql_safe_updates = 0;
+Query OK, 0 rows affected (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 13:00:34 2025 
+>select city, sum(balance) as total_balance
+    -> from account_24012011035
+    -> group by city;
++-----------+---------------+
+| city      | total_balance |
++-----------+---------------+
+| Mehsana   |     100000.00 |
+| Ahmedabad |     175000.00 |
+| Vadodara  |     100000.00 |
++-----------+---------------+
+3 rows in set (0.003 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 13:04:05 2025 
+>select city, count(acc_no) as total_Acc_holder
+    -> from account_24012011035
+    -> group by city
+    -> order by total_acc_holders asc;
+ERROR 1054 (42S22): Unknown column 'total_acc_holders' in 'order clause'
+24012011035_ved [practical_4] Sat Sep 27 13:07:36 2025 
+>select city, count(acc_no) as total_acc_holders
+    -> from account_24012011035
+    -> group by city
+    -> order by total_acc_holders acc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'acc' at line 4
+24012011035_ved [practical_4] Sat Sep 27 13:09:48 2025 
+>
+24012011035_ved [practical_4] Sat Sep 27 13:09:48 2025 
+>select city, count(acc_no) as total_acc_holders
+    -> from account_24012011035
+    -> group by city
+    -> order by total_acc_holders asc;
++-----------+-------------------+
+| city      | total_acc_holders |
++-----------+-------------------+
+| Vadodara  |                 1 |
+| Mehsana   |                 2 |
+| Ahmedabad |                 2 |
++-----------+-------------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 13:18:02 2025 
+>select a.cc_no, a.new_name, a.balance,l.loan_amt
+    -> from account_24012011035 as a
+    -> inner join loan_24012011035 as l
+    -> on a.acc_no = l.acc_no
+    -> where a.balance = l.loan_amt;
+ERROR 1054 (42S22): Unknown column 'a.cc_no' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 15:10:49 2025 
+>select a.acc_no, a.name, a.balance, l.loan_amt
+    -> from account_24012011035 as a
+    -> inner join loan_24012011035 as l
+    -> on a.acc_no = l.acc_no
+    -> where a.balance = l.loan_amt;
+Empty set (0.015 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 15:14:44 2025 
+>select a.cc_no,a.city,l.remaining_loan,l.loan_date,l.loan_no
+    -> from account_24012011035 as a
+    -> left outer join loan_24012011035 as l
+    -> on a.acc_no = l.acc_no;
+ERROR 1054 (42S22): Unknown column 'a.cc_no' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 15:24:59 2025 
+>select a.acc_no, a.city, l.remaining_loan, l.loan_date, l.loan_no
+    -> from account_24012011035 as a
+    -> left outer join loan_24012011035 as l
+    -> on a.acc_no = l.acc_no;
++--------+-----------+----------------+------------+---------+
+| acc_no | city      | remaining_loan | loan_date  | loan_no |
++--------+-----------+----------------+------------+---------+
+| A001   | Mehsana   |       75000.00 | 2004-01-01 | L001    |
+| A002   | Mehsana   |      150000.00 | 2004-05-18 | L002    |
+| A003   | Ahmedabad |           NULL | NULL       | NULL    |
+| A004   | Ahmedabad |           NULL | NULL       | NULL    |
+| A005   | Vadodara  |      300000.00 | 2004-06-15 | L003    |
++--------+-----------+----------------+------------+---------+
+5 rows in set (0.003 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 15:25:58 2025 
+>select l.loan_no,l.interest_rate,t.tr_date,t.type_of_tr
+    -> from loan_24012011035 as l
+    -> right outer join transaction_24012011035 as t
+    -> on l.acc_no = t.acc_no;
+ERROR 1146 (42S02): Table 'practical_4.transaction_24012011035' doesn't exist
+24012011035_ved [practical_4] Sat Sep 27 15:34:36 2025 
+>
+24012011035_ved [practical_4] Sat Sep 27 15:35:16 2025 
+>select l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> from loan_24012011035 as l
+    -> right outer join transaction_24012011035 as t
+    -> on l.acc_no = t.acc_no;
+ERROR 1146 (42S02): Table 'practical_4.transaction_24012011035' doesn't exist
+24012011035_ved [practical_4] Sat Sep 27 16:20:07 2025 
+>CREATE TABLE LOAN_24012011035(
+    -> loan_no VARCHAR(5),
+    ->  acc_no VARCHAR(5),
+    ->  loan_amt DECIMAL(10,2),
+    ->  interest_rate DECIMAL(5,2), 
+    ->  loan_date DATE,
+    ->  remaining_loan DECIMAL(10,2) );
+ERROR 1050 (42S01): Table 'loan_24012011035' already exists
+24012011035_ved [practical_4] Sat Sep 27 16:23:51 2025 
+>select l.loan_no l.interest_rate, t.tr_date,t.type_of_tr
+    -> from loan_24012011035 as l
+    -> right outer join transaction_24012011035 as t
+    -> on l.acc_no = t.acc_no;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.interest_rate, t.tr_date,t.type_of_tr
+from loan_24012011035 as l
+right outer jo' at line 1
+24012011035_ved [practical_4] Sat Sep 27 16:29:47 2025 
+>select l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> from loan_24012011035 as l 
+    -> right outer join transaction_24012011035 as t
+    -> on l.acc_no = t.acc_no;
+ERROR 1146 (42S02): Table 'practical_4.transaction_24012011035' doesn't exist
+24012011035_ved [practical_4] Sat Sep 27 16:30:18 2025 
+>CREATE TABLE transaction_24012011035(
+    ->     tr_no VARCHAR(5),
+    ->     acc_no VARCHAR(5),
+    ->     tr_date DATE,
+    ->     type_of_tr VARCHAR(20),
+    ->     amount DECIMAL(10,2)
+    -> );
+Query OK, 0 rows affected (0.032 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:30:23 2025 
+>select l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> from loan_24012011035 as l 
+    -> right outer join transaction_24012011035 as t
+    -> on l.acc_no = t.acc_no;
+Empty set (0.009 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:30:28 2025 
+>CREATE TABLE transaction_24012011035(
+    ->     tr_no VARCHAR(5),
+    ->     acc_no VARCHAR(5),
+    ->     tr_date DATE,
+    ->     type_of_tr VARCHAR(20),
+    ->     amount DECIMAL(10,2)
+    -> );
+ERROR 1050 (42S01): Table 'transaction_24012011035' already exists
+24012011035_ved [practical_4] Sat Sep 27 16:32:26 2025 
+>SELECT l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> FROM loan_24012011035 AS l 
+    -> RIGHT OUTER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no;
+Empty set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:32:40 2025 
+>SELECT l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> FROM loan_24012011035 AS l 
+    -> RIGHT OUTER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no;
+Empty set (0.000 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:32:48 2025 
+>SELECT * FROM transaction_24012011035;
+Empty set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:32:56 2025 
+>INSERT INTO transaction_24012011035 VALUES
+    -> ('T001', 'A001', '2025-05-03', 'D', 5000),
+    -> ('T002', 'A002', '2025-06-05', 'W', 3000),
+    -> ('T003', 'A003', '2025-08-12', 'D', 10000),
+    -> ('T004', 'A004', '2025-05-15', 'D', 8000),
+    -> ('T005', 'A005', '2025-08-22', 'W', 7000);
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:33:17 2025 
+>SELECT l.loan_no, l.interest_rate, t.tr_date, t.type_of_tr
+    -> FROM loan_24012011035 AS l 
+    -> RIGHT OUTER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no;
++---------+---------------+------------+------------+
+| loan_no | interest_rate | tr_date    | type_of_tr |
++---------+---------------+------------+------------+
+| L001    |          7.00 | 2025-05-03 | D          |
+| L002    |          9.00 | 2025-06-05 | W          |
+| NULL    |          NULL | 2025-08-12 | D          |
+| NULL    |          NULL | 2025-05-15 | D          |
+| L003    |         11.00 | 2025-08-22 | W          |
++---------+---------------+------------+------------+
+5 rows in set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:33:22 2025 
+>select t.amt,a.name,a.acc_no,t.mode_of_pay
+    -> from account_24012011035 as a
+    -> inner join transaction_24012011035 as t
+    -> on a.acc_no = t.acc_no
+    -> where t.mode_of_pay = 'cheque';
+ERROR 1054 (42S22): Unknown column 't.amt' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 16:41:22 2025 
+>select t.amount, a.name, a.acc_no, t.mode_of_pay
+    -> from account_24012011035 as a
+    -> inner join transaction_24012011035 as t
+    -> on a.acc_no = t.acc_no
+    -> where t.mode_of_pay = 'cheque';
+ERROR 1054 (42S22): Unknown column 't.mode_of_pay' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 16:42:16 2025 
+>DESCRIBE transaction_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| tr_no      | varchar(5)    | YES  |     | NULL    |       |
+| acc_no     | varchar(5)    | YES  |     | NULL    |       |
+| tr_date    | date          | YES  |     | NULL    |       |
+| type_of_tr | varchar(20)   | YES  |     | NULL    |       |
+| amount     | decimal(10,2) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+5 rows in set (0.013 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:42:26 2025 
+>UPDATE transaction_24012011035 SET mode_of_pay = 'cheque' WHERE tr_no IN ('T001', 'T003');
+ERROR 1054 (42S22): Unknown column 'mode_of_pay' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 16:43:16 2025 
+>ALTER TABLE transaction_24012011035 ADD COLUMN mode_of_pay VARCHAR(20);
+Query OK, 0 rows affected (0.024 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:43:22 2025 
+>select t.amount, a.name, a.acc_no, t.mode_of_pay
+    -> from account_24012011035 as a
+    -> inner join transaction_24012011035 as t
+    -> on a.acc_no = t.acc_no
+    -> where t.mode_of_pay = 'cheque';
+Empty set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:43:28 2025 
+>ALTER TABLE transaction_24012011035 ADD COLUMN mode_of_pay VARCHAR(20);
+ERROR 1060 (42S21): Duplicate column name 'mode_of_pay'
+24012011035_ved [practical_4] Sat Sep 27 16:44:40 2025 
+>UPDATE transaction_24012011035 SET mode_of_pay = 'Cheque' 
+    -> WHERE acc_no IN ('A002', 'A003', 'A004');
+Query OK, 3 rows affected (0.006 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:44:45 2025 
+>SELECT t.amount AS Amt, a.name AS Name, a.acc_no, t.mode_of_pay AS Mode_of_pay
+    -> FROM account_24012011035 AS a
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON a.acc_no = t.acc_no
+    -> WHERE t.mode_of_pay = 'Cheque';
++----------+--------------+--------+-------------+
+| Amt      | Name         | acc_no | Mode_of_pay |
++----------+--------------+--------+-------------+
+|  3000.00 | Patel Ramesh | A002   | Cheque      |
+| 10000.00 | Dave Hardik  | A003   | Cheque      |
+|  8000.00 | Soni Hetal   | A004   | Cheque      |
++----------+--------------+--------+-------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:44:53 2025 
+>UPDATE transaction_24012011035 SET amount = 5000.00 WHERE acc_no = 'A002';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:45:31 2025 
+>UPDATE transaction_24012011035 SET amount = 25000.00 WHERE acc_no = 'A003'; 
+Query OK, 1 row affected (0.001 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:45:31 2025 
+>UPDATE transaction_24012011035 SET amount = 30000.00 WHERE acc_no = 'A004';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 16:45:32 2025 
+>SELECT t.amount AS Amt, a.name AS Name, a.acc_no, t.mode_of_pay AS Mode_of_pay
+    -> FROM account_24012011035 AS a
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON a.acc_no = t.acc_no
+    -> WHERE t.mode_of_pay = 'Cheque';
++----------+--------------+--------+-------------+
+| Amt      | Name         | acc_no | Mode_of_pay |
++----------+--------------+--------+-------------+
+|  5000.00 | Patel Ramesh | A002   | Cheque      |
+| 25000.00 | Dave Hardik  | A003   | Cheque      |
+| 30000.00 | Soni Hetal   | A004   | Cheque      |
++----------+--------------+--------+-------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:45:38 2025 
+>select t.amt,a.name,a.cc,t.mode_of_pay
+    -> from account_24012011035 as a
+    -> inner join transaction_24012011035 as t
+    -> on a.acc_no = t.acc_no
+    -> where t.mode_of_pay = 'cheque';
+ERROR 1054 (42S22): Unknown column 't.amt' in 'field list'
+24012011035_ved [practical_4] Sat Sep 27 16:54:10 2025 
+>select t.amount, a.name, a.city, t.mode_of_pay
+    -> from account_24012011035 as a
+    -> inner join transaction_24012011035 as t
+    -> on a.acc_no = t.acc_no
+    -> where t.mode_of_pay = 'Cheque';
++----------+--------------+-----------+-------------+
+| amount   | name         | city      | mode_of_pay |
++----------+--------------+-----------+-------------+
+|  5000.00 | Patel Ramesh | Mehsana   | Cheque      |
+| 25000.00 | Dave Hardik  | Ahmedabad | Cheque      |
+| 30000.00 | Soni Hetal   | Ahmedabad | Cheque      |
++----------+--------------+-----------+-------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 16:56:41 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5;
++-----------+---------+-------------+
+| loan_amt  | Amt     | Mode_of_pay |
++-----------+---------+-------------+
+| 100000.00 | 5000.00 | NULL        |
+| 300000.00 | 5000.00 | Cheque      |
++-----------+---------+-------------+
+2 rows in set (0.003 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:00:22 2025 
+>-- Update loan dates to May 2004
+Query OK, 0 rows affected (0.000 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>UPDATE loan_24012011035 SET loan_date = '2004-05-01' WHERE loan_no = 'L001';
+Query OK, 1 row affected (0.003 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>UPDATE loan_24012011035 SET loan_date = '2004-05-18' WHERE loan_no = 'L002';
+Query OK, 0 rows affected (0.000 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>-- Update transaction dates to include May 2004
+Query OK, 0 rows affected (0.000 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>UPDATE transaction_24012011035 SET tr_date = '2004-05-10' WHERE tr_no = 'T001';
+Query OK, 1 row affected (0.000 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:22 2025 
+>UPDATE transaction_24012011035 SET tr_date = '2004-05-15' WHERE tr_no = 'T004';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:23 2025 
+>-- Add a cash transaction for May
+Query OK, 0 rows affected (0.000 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:27 2025 
+>INSERT INTO transaction_24012011035 VALUES 
+    -> ('T006', 'A001', '2004-05-20', 'D', 10000.00, 'Cash');
+Query OK, 1 row affected (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:28 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5;
++-----------+----------+-------------+
+| loan_amt  | Amt      | Mode_of_pay |
++-----------+----------+-------------+
+| 100000.00 |  5000.00 | NULL        |
+| 300000.00 |  5000.00 | Cheque      |
+| 100000.00 | 10000.00 | Cash        |
++-----------+----------+-------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:01:34 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE (MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5)
+    -> AND t.mode_of_pay IS NOT NULL;
++-----------+----------+-------------+
+| loan_amt  | Amt      | Mode_of_pay |
++-----------+----------+-------------+
+| 300000.00 |  5000.00 | Cheque      |
+| 100000.00 | 10000.00 | Cash        |
++-----------+----------+-------------+
+2 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:02:25 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    ->     -> FROM loan_24012011035 AS l
+    ->     -> INNER JOIN transaction_24012011035 AS t
+    ->     -> ON l.acc_no = t.acc_no
+    -> SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> \c
+24012011035_ved [practical_4] Sat Sep 27 17:03:31 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE (MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5);
++-----------+----------+-------------+
+| loan_amt  | Amt      | Mode_of_pay |
++-----------+----------+-------------+
+| 100000.00 |  5000.00 | NULL        |
+| 300000.00 |  5000.00 | Cheque      |
+| 100000.00 | 10000.00 | Cash        |
++-----------+----------+-------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:03:46 2025 
+>DELETE FROM transaction_24012011035 WHERE mode_of_pay IS NULL;
+Query OK, 2 rows affected (0.005 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:10:59 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5;
++-----------+----------+-------------+
+| loan_amt  | Amt      | Mode_of_pay |
++-----------+----------+-------------+
+| 300000.00 |  5000.00 | Cheque      |
+| 100000.00 | 10000.00 | Cash        |
++-----------+----------+-------------+
+2 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:11:05 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE MONTH(l.loan_date) = 5 OR;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5
+24012011035_ved [practical_4] Sat Sep 27 17:12:10 2025 
+>SELECT l.loan_amt, t.amount AS Amt, t.mode_of_pay AS Mode_of_pay
+    -> FROM loan_24012011035 AS l
+    -> INNER JOIN transaction_24012011035 AS t
+    -> ON l.acc_no = t.acc_no
+    -> WHERE MONTH(l.loan_date) = 5 OR MONTH(t.tr_date) = 5;
++-----------+----------+-------------+
+| loan_amt  | Amt      | Mode_of_pay |
++-----------+----------+-------------+
+| 300000.00 |  5000.00 | Cheque      |
+| 100000.00 | 10000.00 | Cash        |
++-----------+----------+-------------+
+2 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:12:55 2025 
+>select name,balance
+    -> from account_24012011035
+    -> where balance>(select balance from account_24012011035 where name = 'dave hardik');
++------------+-----------+
+| name       | balance   |
++------------+-----------+
+| Soni Hetal | 100000.00 |
+| Sony Atul  | 100000.00 |
++------------+-----------+
+2 rows in set (0.004 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:15:09 2025 
+>select * from account_24012011035 where balance < (select avg(bbalance) from account_24012011035):
+    -> \c
+24012011035_ved [practical_4] Sat Sep 27 17:17:10 2025 
+>>select * from account_24012011035 where balance < (select avg(bbalance) from account_24012011035);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>select * from account_24012011035 where balance < (select avg(bbalance) from ac' at line 1
+24012011035_ved [practical_4] Sat Sep 27 17:17:13 2025 
+>select * from account_24012011035 where balance < (select avg(balance) from account_24012011035);
++--------+--------------+---------+----------+------------+
+| acc_no | name         | city    | balance  | loan_taken |
++--------+--------------+---------+----------+------------+
+| A001   | Patel Jigar  | Mehsana | 50000.00 | Yes        |
+| A002   | Patel Ramesh | Mehsana | 50000.00 | Yes        |
++--------+--------------+---------+----------+------------+
+2 rows in set (0.003 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:17:38 2025 
+>select * from installment_24012011035 where amount>(select min(amount) from installment_24012011035);
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+2 rows in set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:19:37 2025 
+>select 
+    -> (select sum(amount) from installment_24012011035) as total_inst_amt,
+    -> (select sum(amt)) from transaction_24012011035) as total_tr_amt;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') as total_tr_amt' at line 3
+24012011035_ved [practical_4] Sat Sep 27 17:22:36 2025 
+>select 
+    ->     (select sum(amount) from installment_24012011035) as total_inst_amt,
+    ->     (select sum(amount) from transaction_24012011035) as total_tr_amt;
++----------------+--------------+
+| total_inst_amt | total_tr_amt |
++----------------+--------------+
+|       55000.00 |     70000.00 |
++----------------+--------------+
+1 row in set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:22:59 2025 
+>select * from account_24012011035
+    -> order by  acc_on desc
+    -> limit 3;
+ERROR 1054 (42S22): Unknown column 'acc_on' in 'order clause'
+24012011035_ved [practical_4] Sat Sep 27 17:24:27 2025 
+>select * from account_24012011035
+    -> order by acc_no desc
+    -> limit 3;
++--------+-------------+-----------+-----------+------------+
+| acc_no | name        | city      | balance   | loan_taken |
++--------+-------------+-----------+-----------+------------+
+| A005   | Sony Atul   | Vadodara  | 100000.00 | Yes        |
+| A004   | Soni Hetal  | Ahmedabad | 100000.00 | No         |
+| A003   | Dave Hardik | Ahmedabad |  75000.00 | No         |
++--------+-------------+-----------+-----------+------------+
+3 rows in set (0.002 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:24:49 2025 
+>select * from account_24012011035
+    -> order by acc_no desc
+    -> limit 1,4
+    -> ;
++--------+--------------+-----------+-----------+------------+
+| acc_no | name         | city      | balance   | loan_taken |
++--------+--------------+-----------+-----------+------------+
+| A004   | Soni Hetal   | Ahmedabad | 100000.00 | No         |
+| A003   | Dave Hardik  | Ahmedabad |  75000.00 | No         |
+| A002   | Patel Ramesh | Mehsana   |  50000.00 | Yes        |
+| A001   | Patel Jigar  | Mehsana   |  50000.00 | Yes        |
++--------+--------------+-----------+-----------+------------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [practical_4] Sat Sep 27 17:26:13 2025 
+>Terminal close -- exit!
+Aborted

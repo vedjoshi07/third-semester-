@@ -1,0 +1,1728 @@
+24012011035_VED [(none)] Tue Sep  9 22:01:19 2025 
+>CREATE DATABASE PRACTICAL_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED [(none)] Tue Sep  9 22:04:24 2025 
+>CREATE DATABASE practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED [(none)] Tue Sep  9 22:08:56 2025 
+>mysql -u root -p
+    -> /c
+    -> \c
+24012011035_VED [(none)] Tue Sep  9 22:10:03 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' WITH GRANT OPTION;
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:10:31 2025 
+>GRANT CREATE ON *.* TO 'practical'@'localhost';
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:10:50 2025 
+>USE practical_db;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_db'
+24012011035_VED [(none)] Tue Sep  9 22:11:06 2025 
+>CREATE DATABASE practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED [(none)] Tue Sep  9 22:11:20 2025 
+>clrscr
+    -> \c
+24012011035_VED [(none)] Tue Sep  9 22:11:42 2025 
+>create database practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED [(none)] Tue Sep  9 22:12:33 2025 
+>
+24012011035_VED [(none)] Tue Sep  9 22:12:35 2025 
+>
+24012011035_VED [(none)] Tue Sep  9 22:12:35 2025 
+>
+24012011035_VED [(none)] Tue Sep  9 22:12:35 2025 
+>
+24012011035_VED [(none)] Tue Sep  9 22:12:36 2025 
+>create database practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED [(none)] Tue Sep  9 22:13:21 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' WITH GRANT OPTION;
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:13:37 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:13:37 2025 
+>mysql -u root -p
+    -> \c
+24012011035_VED [(none)] Tue Sep  9 22:14:31 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:14:38 2025 
+>GRANT RELOAD ON *.* TO 'practical'@'localhost';
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:15:02 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:15:02 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' IDENTIFIED BY 'ved1819b' WITH GRANT OPTION;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IDENTIFIED BY 'ved1819b' WITH GRANT OPTION' at line 1
+24012011035_VED [(none)] Tue Sep  9 22:16:23 2025 
+>ALTER USER 'practical'@'localhost' IDENTIFIED BY 'ved1819b';
+Query OK, 0 rows affected (0.007 sec)
+
+24012011035_VED [(none)] Tue Sep  9 22:17:30 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' WITH GRANT OPTION;
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:17:30 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:17:30 2025 
+>CREATE USER 'practical'@'localhost' IDENTIFIED BY 'ved1819b';
+ERROR 1227 (42000): Access denied; you need (at least one of) the CREATE USER privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:17:39 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' WITH GRANT OPTION;
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:17:39 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:17:39 2025 
+>ALTER USER 'practical'@'localhost' IDENTIFIED BY 'ved1819b';
+Query OK, 0 rows affected (0.004 sec)
+
+24012011035_VED [(none)] Tue Sep  9 22:17:57 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost' WITH GRANT OPTION;
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED [(none)] Tue Sep  9 22:17:57 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED [(none)] Tue Sep  9 22:17:57 2025 
+>Terminal close -- exit!
+Aborted
+24012011035_VED[(none)] Tue Sep  9 22:20:23 2025 
+>CREATE DATABASE practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED[(none)] Tue Sep  9 22:21:19 2025 
+>mysql -u root -p
+    -> CREATE DATABASE practical_1_24012011035;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -u root -p
+CREATE DATABASE practical_1_24012011035' at line 1
+24012011035_VED[(none)] Tue Sep  9 22:25:41 2025 
+>GRANT ALL PRIVILEGES ON practical_1_24012011035.* TO 'practical'@'localhost';
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED[(none)] Tue Sep  9 22:26:12 2025 
+>GRANT CREATE ON *.* TO 'practical'@'localhost';  -- If you need to create more databases
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED[(none)] Tue Sep  9 22:26:12 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED[(none)] Tue Sep  9 22:26:15 2025 
+>
+24012011035_VED[(none)] Tue Sep  9 22:26:15 2025 
+>SHOW GRANTS FOR 'practical'@'localhost';
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:26:31 2025 
+>CREATE DATABASE practical1;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical1'
+24012011035_VED[(none)] Tue Sep  9 22:26:45 2025 
+>EXIT;
+24012011035_VED[(none)] Tue Sep  9 22:29:34 2025 
+>CREATE DATABASE practical_1_24012011035;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED[(none)] Tue Sep  9 22:29:52 2025 
+>SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| performance_schema |
++--------------------+
+2 rows in set (0.002 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:30:40 2025 
+>SHOW GRANTS;
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:30:59 2025 
+>SHOW GRANTS FOR CURRENT_USER();
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:31:07 2025 
+>SHOW GRANTS FOR CURRENT_USER();SHOW GRANTS FOR CURRENT_USER();SHOW GRANTS FOR CURRENT_USER();-----------------------+
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
+    -> 1 row in set (0.000 sec)
+    -> 
+    -> \c
+24012011035_VED[(none)] Tue Sep  9 22:31:26 2025 
+>GRANT ALL PRIVILEGES ON practical_1_24012011035.* TO 'practical'@'localhost';
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED[(none)] Tue Sep  9 22:32:23 2025 
+>GRANT ALL PRIVILEGES ON practical_1_24012011035.* TO 'practical'@'localhost';
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1_24012011035'
+24012011035_VED[(none)] Tue Sep  9 22:33:12 2025 
+>GRANT CREATE ON *.* TO 'practical'@'localhost';
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED[(none)] Tue Sep  9 22:33:12 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED[(none)] Tue Sep  9 22:33:13 2025 
+>
+24012011035_VED[(none)] Tue Sep  9 22:33:14 2025 
+>SELECT VERSION();  -- Check MySQL version
++-----------+
+| VERSION() |
++-----------+
+| 9.4.0     |
++-----------+
+1 row in set (0.003 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:33:45 2025 
+>SELECT NOW();      -- Check current time
++---------------------+
+| NOW()               |
++---------------------+
+| 2025-09-09 22:33:45 |
++---------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:33:45 2025 
+>SHOW GRANTS;       -- View your current privileges
++-----------------------------------------------+
+| Grants for practical@localhost                |
++-----------------------------------------------+
+| GRANT USAGE ON *.* TO `practical`@`localhost` |
++-----------------------------------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:34:33 2025 
+>SELECT USER();          -- Check current user
++---------------------+
+| USER()              |
++---------------------+
+| practical@localhost |
++---------------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:35:00 2025 
+>SELECT DATABASE();      -- Check current database (will be NULL)
++------------+
+| DATABASE() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:35:00 2025 
+>SHOW PROCESSLIST;       -- View current connections
++----+-----------+-----------+------+---------+------+-------+----------------------------------------------------+
+| Id | User      | Host      | db   | Command | Time | State | Info                                               |
++----+-----------+-----------+------+---------+------+-------+----------------------------------------------------+
+| 24 | practical | localhost | NULL | Query   |    0 | init  | SHOW PROCESSLIST       -- View current connections |
++----+-----------+-----------+------+---------+------+-------+----------------------------------------------------+
+1 row in set, 1 warning (0.002 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:35:01 2025 
+>
+24012011035_VED[(none)] Tue Sep  9 22:36:53 2025 
+>create database practical_1;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1'
+24012011035_VED[(none)] Tue Sep  9 22:37:19 2025 
+>-- Login as root first
+Query OK, 0 rows affected (0.000 sec)
+
+24012011035_VED[(none)] Tue Sep  9 22:38:12 2025 
+>mysql -u root -p
+    -> 
+    -> -- Then grant privileges to your user
+    -> GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -u root -p
+
+-- Then grant privileges to your user
+GRANT ALL PRIVILEGES ON ' at line 1
+24012011035_VED[(none)] Tue Sep  9 22:38:12 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED[(none)] Tue Sep  9 22:38:14 2025 
+>CREATE DATABASE practical_1;
+ERROR 1044 (42000): Access denied for user 'practical'@'localhost' to database 'practical_1'
+24012011035_VED[(none)] Tue Sep  9 22:39:05 2025 
+>mysql -u root -p
+    -> \c
+24012011035_VED[(none)] Tue Sep  9 22:39:18 2025 
+>GRANT ALL PRIVILEGES ON *.* TO 'practical'@'localhost';
+ERROR 1045 (28000): Access denied for user 'practical'@'localhost' (using password: YES)
+24012011035_VED[(none)] Tue Sep  9 22:39:25 2025 
+>FLUSH PRIVILEGES;
+ERROR 1227 (42000): Access denied; you need (at least one of) the RELOAD or FLUSH_PRIVILEGES privilege(s) for this operation
+24012011035_VED[(none)] Tue Sep  9 22:39:25 2025 
+>EXIT;
+24012011035_ved [(none)] Tue Sep  9 22:47:32 2025 
+> SHOW DATABASES;
++-------------------------+
+| Database                |
++-------------------------+
+| Class_Info              |
+| college                 |
+| convergence_db          |
+| information_schema      |
+| mysql                   |
+| performance_schema      |
+| practical1              |
+| practical_1_24012011035 |
+| Stu_Info                |
+| students                |
+| sys                     |
+| testdb                  |
+| ved                     |
+| xyz                     |
++-------------------------+
+14 rows in set (0.001 sec)
+
+24012011035_ved [(none)] Tue Sep  9 22:48:00 2025 
+>CREATE DATABASE practical_1_24012011035;
+ERROR 1007 (HY000): Can't create database 'practical_1_24012011035'; database exists
+24012011035_ved [(none)] Tue Sep  9 22:48:33 2025 
+>DROP DATABASE practical_1_24012011035;
+Query OK, 0 rows affected (0.008 sec)
+
+24012011035_ved [(none)] Tue Sep  9 22:49:30 2025 
+>CREATE DATABASE practical_1_24012011035;
+Query OK, 1 row affected (0.003 sec)
+
+24012011035_ved [(none)] Tue Sep  9 22:50:02 2025 
+>USE practical_1_24012011035;
+Database changed
+24012011035_ved [practical_1_24012011035] Tue Sep  9 22:51:51 2025 
+>CREATE TABLE ACCOUNT_24012011035(
+    ->     -> acc_no varchar(5),
+    ->     -> Name varchar(30),
+    ->     -> City varchar(20),
+    ->     -> Balance decimal(10,2),
+    ->     -> loan_taken varchar(5));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> acc_no varchar(5),
+    -> Name varchar(30),
+    -> City varchar(20),
+    -> B' at line 2
+24012011035_ved [practical_1_24012011035] Tue Sep  9 22:57:48 2025 
+>CREATE TABLE ACCOUNT_24012011035(
+    ->     acc_no varchar(5) PRIMARY KEY,
+    ->     Name varchar(30),
+    ->     City varchar(20),
+    ->     Balance decimal(10,2),
+    ->     loan_taken varchar(5)
+    -> );
+Query OK, 0 rows affected (0.023 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 22:59:22 2025 
+>INSERT INTO ACCOUNT_24012011035 values
+    ->     -> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    ->     -> ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    ->     -> ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    ->     -> ('A004','Soni Hetal','Ahmedabad',100000,'No'),
+    ->     -> ('A005','Sony Atul','Vadodara',100000,'Yes');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    -> ('A002','Patel Ramesh','' at line 2
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:01:26 2025 
+>desc account_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| acc_no     | varchar(5)    | NO   | PRI | NULL    |       |
+| Name       | varchar(30)   | YES  |     | NULL    |       |
+| City       | varchar(20)   | YES  |     | NULL    |       |
+| Balance    | decimal(10,2) | YES  |     | NULL    |       |
+| loan_taken | varchar(5)    | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+5 rows in set (0.009 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:02:10 2025 
+>INSERT INTO ACCOUNT_24012011035 (acc_no, Name, City, Balance, loan_taken) VALUES
+    -> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    -> ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    -> ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    -> ('A004','Soni Hetal','Ahmedabad',100000,'No'),
+    -> ('A005','Sony Atul','Vadodara',100000,'Yes');
+Query OK, 5 rows affected (0.008 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:03:50 2025 
+>select * from account_24012011035;
++--------+--------------+-----------+-----------+------------+
+| acc_no | Name         | City      | Balance   | loan_taken |
++--------+--------------+-----------+-----------+------------+
+| A001   | Patel Jigar  | Mehsana   |  50000.00 | Yes        |
+| A002   | Patel Ramesh | Mehsana   |  50000.00 | Yes        |
+| A003   | Dave Hardik  | Ahmedabad |  75000.00 | No         |
+| A004   | Soni Hetal   | Ahmedabad | 100000.00 | No         |
+| A005   | Sony Atul    | Vadodara  | 100000.00 | Yes        |
++--------+--------------+-----------+-----------+------------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:06:18 2025 
+>CREATE TABLE LOAN_24012011035(
+    ->     ->     loan_no VARCHAR(5),
+    ->     ->     acc_no VARCHAR(5),
+    ->     ->     loan_amt DECIMAL(10,2),
+    ->     ->     interest_rate DECIMAL(5,2),  -- Corrected spelling
+    ->     ->     loan_date DATE,
+    ->     ->     remaining_loan DECIMAL(10,2)
+    -> 
+    -> \c
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:09:06 2025 
+>CREATE TABLE LOAN_24012011035(
+    ->     ->     loan_no VARCHAR(5),
+    ->     ->     acc_no VARCHAR(5),
+    ->     ->     loan_amt DECIMAL(10,2),
+    ->     ->     interest_rate DECIMAL(5,2), 
+    ->     ->     loan_date DATE,
+    ->     ->     remaining_loan DECIMAL(10,2)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->     loan_no VARCHAR(5),
+    ->     acc_no VARCHAR(5),
+    ->     loan_amt DEC' at line 2
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:09:42 2025 
+>CREATE TABLE LOAN_24012011035(
+    ->     loan_no VARCHAR(5),
+    ->     acc_no VARCHAR(5),
+    ->     loan_amt DECIMAL(10,2),
+    ->     interest_rate DECIMAL(5,2), 
+    ->     loan_date DATE,
+    ->     remaining_loan DECIMAL(10,2)
+    -> );
+Query OK, 0 rows affected (0.010 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:11:56 2025 
+>INSERT INTO LOAN_24012011035 VALUES
+    ->     -> ('L001','A001',100000,7,STR_TO_DATE('01-JAN-2004','%d-%b-%Y'),75000),
+    ->     -> ('L002','A002',300000,9,STR_TO_DATE('18-MAY-2004','%d-%b-%Y'),150000),
+    ->     -> ('L003','A005',500000,11,STR_TO_DATE('15-JUN-2004','%d-%b-%Y'),300000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('L001','A001',100000,7,STR_TO_DATE('01-JAN-2004','%d-%b-%Y'),75000),
+    -> ' at line 2
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:13:25 2025 
+>INSERT INTO LOAN_24012011035 VALUES
+    ->  ('L001','A001',100000,7,STR_TO_DATE('01-JAN-2004','%d-%b-%Y'),75000),
+    ->  ('L002','A002',300000,9,STR_TO_DATE('18-MAY-2004','%d-%b-%Y'),150000),
+    ->  ('L003','A005',500000,11,STR_TO_DATE('15-JUN-2004','%d-%b-%Y'),300000);
+Query OK, 3 rows affected (0.005 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:14:01 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+6 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:15:30 2025 
+>SELECT * FROM LOAN_24012011035;
++---------+--------+-----------+---------------+------------+----------------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan |
++---------+--------+-----------+---------------+------------+----------------+
+| L001    | A001   | 100000.00 |          7.00 | 2004-01-01 |       75000.00 |
+| L002    | A002   | 300000.00 |          9.00 | 2004-05-18 |      150000.00 |
+| L003    | A005   | 500000.00 |         11.00 | 2004-06-15 |      300000.00 |
++---------+--------+-----------+---------------+------------+----------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:17:46 2025 
+>CREATE TABLE INSTALLMENT_24012011035(
+    ->  LOAN_NO VARCHAR(5),
+    ->  INST_NO VARCHAR(5),
+    -> INST_DATE DATE,
+    ->  AMOUNT DECIMAL(10,2));
+Query OK, 0 rows affected (0.010 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:22:34 2025 
+>desc installment_24012011035;
++-----------+---------------+------+-----+---------+-------+
+| Field     | Type          | Null | Key | Default | Extra |
++-----------+---------------+------+-----+---------+-------+
+| LOAN_NO   | varchar(5)    | YES  |     | NULL    |       |
+| INST_NO   | varchar(5)    | YES  |     | NULL    |       |
+| INST_DATE | date          | YES  |     | NULL    |       |
+| AMOUNT    | decimal(10,2) | YES  |     | NULL    |       |
++-----------+---------------+------+-----+---------+-------+
+4 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:23:55 2025 
+>INSERT INTO INSTALLMENT_24012011035 VALUES
+    -> ('L001','I001',STR_TO_DATE('02-FEB-2004','%d-%b-%Y'),15000),
+    -> ('L002','I002',STR_TO_DATE('18-JUN-2004','%d-%b-%Y'),20000),
+    -> ('L003','I003',STR_TO_DATE('15-JUL-2004','%d-%b-%Y'),20000);
+Query OK, 3 rows affected (0.003 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:26:17 2025 
+>select * from installment_24012011035;
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:28:07 2025 
+>SELECT * FROM INSTALLMENT_24012011035;
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:30:26 2025 
+> SELECT INST_NO,AMOUNT FROM INSTALLMENT_24012011035;
++---------+----------+
+| INST_NO | AMOUNT   |
++---------+----------+
+| I001    | 15000.00 |
+| I002    | 20000.00 |
+| I003    | 20000.00 |
++---------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:31:52 2025 
+>select loan_no, INST_NO,AMOUNT FROM INSTALLMENT_24012011035;
++---------+---------+----------+
+| loan_no | INST_NO | AMOUNT   |
++---------+---------+----------+
+| L001    | I001    | 15000.00 |
+| L002    | I002    | 20000.00 |
+| L003    | I003    | 20000.00 |
++---------+---------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:32:22 2025 
+>SELECT ACC_NO,NAME FROM ACCOUNT_24012011035 WHERE CITY= 'AHMEDABAD';
++--------+-------------+
+| ACC_NO | NAME        |
++--------+-------------+
+| A003   | Dave Hardik |
+| A004   | Soni Hetal  |
++--------+-------------+
+2 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:34:25 2025 
+>SELECT * FROM LOAN_24012011035 WHERE LOAN_AMT > 100000;
++---------+--------+-----------+---------------+------------+----------------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan |
++---------+--------+-----------+---------------+------------+----------------+
+| L002    | A002   | 300000.00 |          9.00 | 2004-05-18 |      150000.00 |
+| L003    | A005   | 500000.00 |         11.00 | 2004-06-15 |      300000.00 |
++---------+--------+-----------+---------------+------------+----------------+
+2 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:35:38 2025 
+>Describe account_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| acc_no     | varchar(5)    | NO   | PRI | NULL    |       |
+| Name       | varchar(30)   | YES  |     | NULL    |       |
+| City       | varchar(20)   | YES  |     | NULL    |       |
+| Balance    | decimal(10,2) | YES  |     | NULL    |       |
+| loan_taken | varchar(5)    | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+5 rows in set (0.004 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:36:49 2025 
+>describe loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+6 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:40:25 2025 
+>describe loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+6 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:41:35 2025 
+>describe installment_24012011035;
++-----------+---------------+------+-----+---------+-------+
+| Field     | Type          | Null | Key | Default | Extra |
++-----------+---------------+------+-----+---------+-------+
+| LOAN_NO   | varchar(5)    | YES  |     | NULL    |       |
+| INST_NO   | varchar(5)    | YES  |     | NULL    |       |
+| INST_DATE | date          | YES  |     | NULL    |       |
+| AMOUNT    | decimal(10,2) | YES  |     | NULL    |       |
++-----------+---------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:43:21 2025 
+>select * from account_24012011035;
++--------+--------------+-----------+-----------+------------+
+| acc_no | Name         | City      | Balance   | loan_taken |
++--------+--------------+-----------+-----------+------------+
+| A001   | Patel Jigar  | Mehsana   |  50000.00 | Yes        |
+| A002   | Patel Ramesh | Mehsana   |  50000.00 | Yes        |
+| A003   | Dave Hardik  | Ahmedabad |  75000.00 | No         |
+| A004   | Soni Hetal   | Ahmedabad | 100000.00 | No         |
+| A005   | Sony Atul    | Vadodara  | 100000.00 | Yes        |
++--------+--------------+-----------+-----------+------------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:46:50 2025 
+>update account_24012011035 set name = 'patel hiren' where name = 'patel jigar';
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:48:47 2025 
+>select * from account_24012011035;
++--------+--------------+-----------+-----------+------------+
+| acc_no | Name         | City      | Balance   | loan_taken |
++--------+--------------+-----------+-----------+------------+
+| A001   | patel hiren  | Mehsana   |  50000.00 | Yes        |
+| A002   | Patel Ramesh | Mehsana   |  50000.00 | Yes        |
+| A003   | Dave Hardik  | Ahmedabad |  75000.00 | No         |
+| A004   | Soni Hetal   | Ahmedabad | 100000.00 | No         |
+| A005   | Sony Atul    | Vadodara  | 100000.00 | Yes        |
++--------+--------------+-----------+-----------+------------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:50:25 2025 
+>update account_24012011035 set name = 'kothari nehal' , city = 'kherva' where acc_no = 'A005';
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:53:33 2025 
+>select * from account_24012011035;
++--------+---------------+-----------+-----------+------------+
+| acc_no | Name          | City      | Balance   | loan_taken |
++--------+---------------+-----------+-----------+------------+
+| A001   | patel hiren   | Mehsana   |  50000.00 | Yes        |
+| A002   | Patel Ramesh  | Mehsana   |  50000.00 | Yes        |
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         |
+| A004   | Soni Hetal    | Ahmedabad | 100000.00 | No         |
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        |
++--------+---------------+-----------+-----------+------------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:55:57 2025 
+>select * from account_24012011035 where loan_taken = 'yes';
++--------+---------------+---------+-----------+------------+
+| acc_no | Name          | City    | Balance   | loan_taken |
++--------+---------------+---------+-----------+------------+
+| A001   | patel hiren   | Mehsana |  50000.00 | Yes        |
+| A002   | Patel Ramesh  | Mehsana |  50000.00 | Yes        |
+| A005   | kothari nehal | kherva  | 100000.00 | Yes        |
++--------+---------------+---------+-----------+------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:57:49 2025 
+>describe account_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| acc_no     | varchar(5)    | NO   | PRI | NULL    |       |
+| Name       | varchar(30)   | YES  |     | NULL    |       |
+| City       | varchar(20)   | YES  |     | NULL    |       |
+| Balance    | decimal(10,2) | YES  |     | NULL    |       |
+| loan_taken | varchar(5)    | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Tue Sep  9 23:59:20 2025 
+>alter table account_24012011035 add column address varchar(20);
+Query OK, 0 rows affected (0.014 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:00:54 2025 
+>describe account_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| acc_no     | varchar(5)    | NO   | PRI | NULL    |       |
+| Name       | varchar(30)   | YES  |     | NULL    |       |
+| City       | varchar(20)   | YES  |     | NULL    |       |
+| Balance    | decimal(10,2) | YES  |     | NULL    |       |
+| loan_taken | varchar(5)    | YES  |     | NULL    |       |
+| address    | varchar(20)   | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+6 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:01:51 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+6 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:08:53 2025 
+>alter table loan_24012011035 add column credit_no varchar(4);
+Query OK, 0 rows affected (0.008 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:10:21 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
+| credit_no      | varchar(4)    | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+7 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:11:22 2025 
+>desc account_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| acc_no     | varchar(5)    | NO   | PRI | NULL    |       |
+| Name       | varchar(30)   | YES  |     | NULL    |       |
+| City       | varchar(20)   | YES  |     | NULL    |       |
+| Balance    | decimal(10,2) | YES  |     | NULL    |       |
+| loan_taken | varchar(5)    | YES  |     | NULL    |       |
+| address    | varchar(20)   | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+6 rows in set (0.004 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:12:49 2025 
+>create table account_temp as select acc_no,name,balance from account_24012011035;
+Query OK, 5 rows affected (0.010 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:14:35 2025 
+>desc account_temp;
++---------+---------------+------+-----+---------+-------+
+| Field   | Type          | Null | Key | Default | Extra |
++---------+---------------+------+-----+---------+-------+
+| acc_no  | varchar(5)    | NO   |     | NULL    |       |
+| name    | varchar(30)   | YES  |     | NULL    |       |
+| balance | decimal(10,2) | YES  |     | NULL    |       |
++---------+---------------+------+-----+---------+-------+
+3 rows in set (0.004 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:15:47 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
+| credit_no      | varchar(4)    | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+7 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:17:07 2025 
+>create table loan_temp as select loan_no,acc_no,loan_amt,loan_date from loan_24012011035;
+Query OK, 3 rows affected (0.015 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:18:41 2025 
+>desc loan_temp;
++-----------+---------------+------+-----+---------+-------+
+| Field     | Type          | Null | Key | Default | Extra |
++-----------+---------------+------+-----+---------+-------+
+| loan_no   | varchar(5)    | YES  |     | NULL    |       |
+| acc_no    | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt  | decimal(10,2) | YES  |     | NULL    |       |
+| loan_date | date          | YES  |     | NULL    |       |
++-----------+---------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:19:34 2025 
+>desc loan_temp;
++-----------+---------------+------+-----+---------+-------+
+| Field     | Type          | Null | Key | Default | Extra |
++-----------+---------------+------+-----+---------+-------+
+| loan_no   | varchar(5)    | YES  |     | NULL    |       |
+| acc_no    | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt  | decimal(10,2) | YES  |     | NULL    |       |
+| loan_date | date          | YES  |     | NULL    |       |
++-----------+---------------+------+-----+---------+-------+
+4 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:20:29 2025 
+>create table trans_temp as select loan_no,acc_no as account_number,loan_amt,loan_date from loan_temp;
+Query OK, 3 rows affected (0.011 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:23:46 2025 
+>desc trans_temp;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| account_number | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+4 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:24:53 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(5)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
+| credit_no      | varchar(4)    | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+7 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:26:02 2025 
+>alter table loan_24012011035 modify acc_no varchar(7);
+Query OK, 0 rows affected (0.009 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:27:15 2025 
+>desc loan_24012011035;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| loan_no        | varchar(5)    | YES  |     | NULL    |       |
+| acc_no         | varchar(7)    | YES  |     | NULL    |       |
+| loan_amt       | decimal(10,2) | YES  |     | NULL    |       |
+| interest_rate  | decimal(5,2)  | YES  |     | NULL    |       |
+| loan_date      | date          | YES  |     | NULL    |       |
+| remaining_loan | decimal(10,2) | YES  |     | NULL    |       |
+| credit_no      | varchar(4)    | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+7 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:28:10 2025 
+>select * from account_24012011035;
++--------+---------------+-----------+-----------+------------+---------+
+| acc_no | Name          | City      | Balance   | loan_taken | address |
++--------+---------------+-----------+-----------+------------+---------+
+| A001   | patel hiren   | Mehsana   |  50000.00 | Yes        | NULL    |
+| A002   | Patel Ramesh  | Mehsana   |  50000.00 | Yes        | NULL    |
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         | NULL    |
+| A004   | Soni Hetal    | Ahmedabad | 100000.00 | No         | NULL    |
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        | NULL    |
++--------+---------------+-----------+-----------+------------+---------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:29:06 2025 
+>delete from account_24012011035 where acc_no = 'A004';
+Query OK, 1 row affected (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:30:38 2025 
+>select * from account_24012011035;
++--------+---------------+-----------+-----------+------------+---------+
+| acc_no | Name          | City      | Balance   | loan_taken | address |
++--------+---------------+-----------+-----------+------------+---------+
+| A001   | patel hiren   | Mehsana   |  50000.00 | Yes        | NULL    |
+| A002   | Patel Ramesh  | Mehsana   |  50000.00 | Yes        | NULL    |
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         | NULL    |
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        | NULL    |
++--------+---------------+-----------+-----------+------------+---------+
+4 rows in set (0.004 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:35:33 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          7.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |          9.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         11.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:36:58 2025 
+>update loan_24012011035 set interest_rate = interest_rate + 2;
+Query OK, 3 rows affected (0.006 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:38:32 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |         11.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         13.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:38:52 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |         11.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         13.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:39:54 2025 
+>select * from loan_24012011035 where month(loan_date) = 1;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+1 row in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:41:05 2025 
+>select * from installment_24012011035;
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:42:29 2025 
+>update installment_24012011035 set installment_date = '2022-03-03' where installment_date = '2021-02-02';
+ERROR 1054 (42S22): Unknown column 'installment_date' in 'where clause'
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:44:19 2025 
+>update installment_24012011035 set installment_date = '2022-03-03' where installment_date = '2021-02-02';
+ERROR 1054 (42S22): Unknown column 'installment_date' in 'where clause'
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:45:28 2025 
+>update installment_24012011035 set inst_date = '2022-03-03' where inst_date = '2021-02-02;
+    '> \c
+    '> \\c
+    '> /c
+    '> c\
+    '> \c
+    '> ^C
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:48:09 2025 
+>update installment_24012011035 set inst_date = '2022-03-03' where inst_date = '2021-02-02';
+Query OK, 0 rows affected (0.003 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:49:43 2025 
+>select * from installment_24012011035;
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:50:06 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |         11.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         13.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:51:26 2025 
+>select loan_amt * 2 as double_loan_amt from loan_24012011035;
++-----------------+
+| double_loan_amt |
++-----------------+
+|       200000.00 |
+|       600000.00 |
+|      1000000.00 |
++-----------------+
+3 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:52:51 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |         11.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         13.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:56:29 2025 
+>update loan_24012011035 set loan_amt = 150000 where loan_no = 'Loo1';
+Query OK, 0 rows affected (0.002 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:57:49 2025 
+>select * from loan_24012011035;
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| loan_no | acc_no | loan_amt  | interest_rate | loan_date  | remaining_loan | credit_no |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+| L001    | A001   | 100000.00 |          9.00 | 2004-01-01 |       75000.00 | NULL      |
+| L002    | A002   | 300000.00 |         11.00 | 2004-05-18 |      150000.00 | NULL      |
+| L003    | A005   | 500000.00 |         13.00 | 2004-06-15 |      300000.00 | NULL      |
++---------+--------+-----------+---------------+------------+----------------+-----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:58:10 2025 
+>select * from installment_24012011035;
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 00:59:17 2025 
+>select loan_no,amount,installment_date from installment_24012011035 order by installment_date;
+ERROR 1054 (42S22): Unknown column 'installment_date' in 'field list'
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:00:58 2025 
+>select loan_no,amount,inst_date from inst_24012011035 order by inst_date;
+ERROR 1146 (42S02): Table 'practical_1_24012011035.inst_24012011035' doesn't exist
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:01:36 2025 
+>select loan_no,amount,inst_date from installment_24012011035 order by inst_date;
++---------+----------+------------+
+| loan_no | amount   | inst_date  |
++---------+----------+------------+
+| L001    | 15000.00 | 2004-02-02 |
+| L002    | 20000.00 | 2004-06-18 |
+| L003    | 20000.00 | 2004-07-15 |
++---------+----------+------------+
+3 rows in set (0.003 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:02:37 2025 
+>select * from account_24012011035;
++--------+---------------+-----------+-----------+------------+---------+
+| acc_no | Name          | City      | Balance   | loan_taken | address |
++--------+---------------+-----------+-----------+------------+---------+
+| A001   | patel hiren   | Mehsana   |  50000.00 | Yes        | NULL    |
+| A002   | Patel Ramesh  | Mehsana   |  50000.00 | Yes        | NULL    |
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         | NULL    |
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        | NULL    |
++--------+---------------+-----------+-----------+------------+---------+
+4 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:06:08 2025 
+>select * from account_24012011035 order by acc_no desc;
++--------+---------------+-----------+-----------+------------+---------+
+| acc_no | Name          | City      | Balance   | loan_taken | address |
++--------+---------------+-----------+-----------+------------+---------+
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        | NULL    |
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         | NULL    |
+| A002   | Patel Ramesh  | Mehsana   |  50000.00 | Yes        | NULL    |
+| A001   | patel hiren   | Mehsana   |  50000.00 | Yes        | NULL    |
++--------+---------------+-----------+-----------+------------+---------+
+4 rows in set (0.002 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:07:14 2025 
+>drop table loan_temp;
+Query OK, 0 rows affected (0.020 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:08:18 2025 
+>show tables;
++-----------------------------------+
+| Tables_in_practical_1_24012011035 |
++-----------------------------------+
+| account_24012011035               |
+| account_temp                      |
+| INSTALLMENT_24012011035           |
+| loan_24012011035                  |
+| trans_temp                        |
++-----------------------------------+
+5 rows in set (0.012 sec)
+
+24012011035_ved [practical_1_24012011035] Wed Sep 10 01:08:28 2025 
+>Terminal close -- exit!
+Aborted
+
+24012011035_ved [Wed Sep 10 21:49:25 2025] (none) 
+>use practical_1_24012011035;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+24012011035_ved [Wed Sep 10 21:49:43 2025] practical_1_24012011035 
+>create table cars_24012011035(
+    -> car_id varchar(5) primary key,
+    -> model_name varchar(50),
+    -> year int,
+    -> price decimal(10,2)
+    -> );
+Query OK, 0 rows affected (0.022 sec)
+
+24012011035_ved [Wed Sep 10 21:52:04 2025] practical_1_24012011035 
+>create table manufacturers_24012011035(
+    -> 
+    -> \c
+24012011035_ved [Wed Sep 10 21:53:58 2025] practical_1_24012011035 
+>create table manufacturers_24012011035(
+    -> manufacturer_id varchar(5) primary key,
+    -> name varchar(50),
+    -> country varchar(50)
+    -> );
+Query OK, 0 rows affected (0.012 sec)
+
+24012011035_ved [Wed Sep 10 21:56:03 2025] practical_1_24012011035 
+>create table production_24012011035(
+    -> production_id varchar(5) primary key,
+    -> car_id varchar(5),
+    -> manufacturer_id varchar(5),
+    -> production_date date,
+    -> units_produced int
+    -> );
+Query OK, 0 rows affected (0.010 sec)
+
+24012011035_ved [Wed Sep 10 21:58:01 2025] practical_1_24012011035 
+>insert into cars_24012011035(cars_id,model_name,year,price)values
+    -> ('C001','speedster',2021,25000),
+    -> ('C002','EchoDrive',2023,18000),
+    -> ('C003','UrbanX',2022,22000),
+    -> ('C004','FamilyGo',2020,17000),
+    -> :
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':' at line 6
+24012011035_ved [Wed Sep 10 22:04:51 2025] practical_1_24012011035 
+>insert into cars_24012011035(cars_id,model_name,year,price)values
+    ->     -> ('C001','speedster',2021,25000),
+    ->     -> ('C002','EchoDrive',2023,18000),
+    ->     -> ('C003','UrbanX',2022,22000),
+    ->     -> ('C004','FamilyGo',2020,17000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('C001','speedster',2021,25000),
+    -> ('C002','EchoDrive',2023,18000),
+    ' at line 2
+24012011035_ved [Wed Sep 10 22:05:09 2025] practical_1_24012011035 
+>INSERT INTO cars_24012011035(cars_id, model_name, year, price) VALUES
+    -> ('C001', 'speedster', 2021, 25000),
+    -> ('C002', 'EchoDrive', 2023, 18000),
+    -> ('C003', 'UrbanX', 2022, 22000),
+    -> ('C004', 'FamilyGo', 2020, 17000);
+ERROR 1054 (42S22): Unknown column 'cars_id' in 'field list'
+24012011035_ved [Wed Sep 10 22:06:12 2025] practical_1_24012011035 
+>INSERT INTO cars_24012011035(car_id, model_name, year, price) VALUES
+    -> ('C001', 'speedster', 2021, 25000),
+    -> ('C002', 'EchoDrive', 2023, 18000),
+    -> ('C003', 'UrbanX', 2022, 22000),
+    -> ('C004', 'FamilyGo', 2020, 17000);
+Query OK, 4 rows affected (0.004 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+24012011035_ved [Wed Sep 10 22:06:55 2025] practical_1_24012011035 
+>desc cars_24012011035;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| car_id     | varchar(5)    | NO   | PRI | NULL    |       |
+| model_name | varchar(50)   | YES  |     | NULL    |       |
+| year       | int           | YES  |     | NULL    |       |
+| price      | decimal(10,2) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+4 rows in set (0.009 sec)
+
+24012011035_ved [Wed Sep 10 22:08:15 2025] practical_1_24012011035 
+>insert into manufacturers_24012011035(manufacturer_id,name,country)values
+    -> ('M01','AutoTech','Germany'),
+    -> ('M02','Green Motors','USA'),
+    -> ('M03','City Cars','Japan'),
+    -> ('M04','Family Motors','India');
+Query OK, 4 rows affected (0.005 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+24012011035_ved [Wed Sep 10 22:13:51 2025] practical_1_24012011035 
+>desc manufacturers_24012011035;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| manufacturer_id | varchar(5)  | NO   | PRI | NULL    |       |
+| name            | varchar(50) | YES  |     | NULL    |       |
+| country         | varchar(50) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.004 sec)
+
+24012011035_ved [Wed Sep 10 22:18:01 2025] practical_1_24012011035 
+>insert into production_24012011035(production_id,car_id,manufacturer_id,production_date,units_produced)values
+    -> ('P001','C001','M01','2021-03-10',150),
+    -> ('P002','C002','M02','2023-07-15',200),
+    -> ('P003','C003','M03','2022-11-05',180),
+    -> ('P004','C004','M04','2020-06-20',120);
+Query OK, 4 rows affected (0.006 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+24012011035_ved [Wed Sep 10 22:24:35 2025] practical_1_24012011035 
+>desc production_24012011035;
++-----------------+------------+------+-----+---------+-------+
+| Field           | Type       | Null | Key | Default | Extra |
++-----------------+------------+------+-----+---------+-------+
+| production_id   | varchar(5) | NO   | PRI | NULL    |       |
+| car_id          | varchar(5) | YES  |     | NULL    |       |
+| manufacturer_id | varchar(5) | YES  |     | NULL    |       |
+| production_date | date       | YES  |     | NULL    |       |
+| units_produced  | int        | YES  |     | NULL    |       |
++-----------------+------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+24012011035_ved [Wed Sep 10 22:25:59 2025] practical_1_24012011035 
+>select*from cars_24012011035;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 18000.00 |
+| C003   | UrbanX     | 2022 | 22000.00 |
+| C004   | FamilyGo   | 2020 | 17000.00 |
++--------+------------+------+----------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:27:00 2025] practical_1_24012011035 
+>select * from cars_24012011035 where year > 2020;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 18000.00 |
+| C003   | UrbanX     | 2022 | 22000.00 |
++--------+------------+------+----------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:28:15 2025] practical_1_24012011035 
+>select * from manufacturers_24012011035;
++-----------------+---------------+---------+
+| manufacturer_id | name          | country |
++-----------------+---------------+---------+
+| M01             | AutoTech      | Germany |
+| M02             | Green Motors  | USA     |
+| M03             | City Cars     | Japan   |
+| M04             | Family Motors | India   |
++-----------------+---------------+---------+
+4 rows in set (0.002 sec)
+
+24012011035_ved [Wed Sep 10 22:31:03 2025] practical_1_24012011035 
+>select name,country from manufacturers_24012011035;
++---------------+---------+
+| name          | country |
++---------------+---------+
+| AutoTech      | Germany |
+| Green Motors  | USA     |
+| City Cars     | Japan   |
+| Family Motors | India   |
++---------------+---------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:32:11 2025] practical_1_24012011035 
+>select * from cars_24012011035;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 18000.00 |
+| C003   | UrbanX     | 2022 | 22000.00 |
+| C004   | FamilyGo   | 2020 | 17000.00 |
++--------+------------+------+----------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:33:13 2025] practical_1_24012011035 
+>update cars_24012011035 set price = 19500 where car_id = 'C002';
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [Wed Sep 10 22:34:26 2025] practical_1_24012011035 
+>select * from cars_24012011035;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 19500.00 |
+| C003   | UrbanX     | 2022 | 22000.00 |
+| C004   | FamilyGo   | 2020 | 17000.00 |
++--------+------------+------+----------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:36:05 2025] practical_1_24012011035 
+>select * from manufacturers_24012011035;
++-----------------+---------------+---------+
+| manufacturer_id | name          | country |
++-----------------+---------------+---------+
+| M01             | AutoTech      | Germany |
+| M02             | Green Motors  | USA     |
+| M03             | City Cars     | Japan   |
+| M04             | Family Motors | India   |
++-----------------+---------------+---------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:37:20 2025] practical_1_24012011035 
+>update manufacturers_24012011035 set name = 'EcoMotors' where manufacturer_id = 'M02';
+Query OK, 1 row affected (0.004 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+24012011035_ved [Wed Sep 10 22:38:59 2025] practical_1_24012011035 
+>select * from manufacturers_24012011035;
++-----------------+---------------+---------+
+| manufacturer_id | name          | country |
++-----------------+---------------+---------+
+| M01             | AutoTech      | Germany |
+| M02             | EcoMotors     | USA     |
+| M03             | City Cars     | Japan   |
+| M04             | Family Motors | India   |
++-----------------+---------------+---------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:40:32 2025] practical_1_24012011035 
+>select * from cars_24012011035;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 19500.00 |
+| C003   | UrbanX     | 2022 | 22000.00 |
+| C004   | FamilyGo   | 2020 | 17000.00 |
++--------+------------+------+----------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:42:48 2025] practical_1_24012011035 
+>delete from cars_24012011035 where car_id = 'C003';
+Query OK, 1 row affected (0.003 sec)
+
+24012011035_ved [Wed Sep 10 22:44:07 2025] practical_1_24012011035 
+>select * from cars_24012011035;
++--------+------------+------+----------+
+| car_id | model_name | year | price    |
++--------+------------+------+----------+
+| C001   | speedster  | 2021 | 25000.00 |
+| C002   | EchoDrive  | 2023 | 19500.00 |
+| C004   | FamilyGo   | 2020 | 17000.00 |
++--------+------------+------+----------+
+3 rows in set (0.000 sec)
+
+24012011035_ved [Wed Sep 10 22:44:24 2025] practical_1_24012011035 
+>select * from production_24012011035;
++---------------+--------+-----------------+-----------------+----------------+
+| production_id | car_id | manufacturer_id | production_date | units_produced |
++---------------+--------+-----------------+-----------------+----------------+
+| P001          | C001   | M01             | 2021-03-10      |            150 |
+| P002          | C002   | M02             | 2023-07-15      |            200 |
+| P003          | C003   | M03             | 2022-11-05      |            180 |
+| P004          | C004   | M04             | 2020-06-20      |            120 |
++---------------+--------+-----------------+-----------------+----------------+
+4 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:45:28 2025] practical_1_24012011035 
+>delete from production_24012011035 where production_id = 'P003';
+Query OK, 1 row affected (0.002 sec)
+
+24012011035_ved [Wed Sep 10 22:46:38 2025] practical_1_24012011035 
+>select * from production_24012011035;
++---------------+--------+-----------------+-----------------+----------------+
+| production_id | car_id | manufacturer_id | production_date | units_produced |
++---------------+--------+-----------------+-----------------+----------------+
+| P001          | C001   | M01             | 2021-03-10      |            150 |
+| P002          | C002   | M02             | 2023-07-15      |            200 |
+| P004          | C004   | M04             | 2020-06-20      |            120 |
++---------------+--------+-----------------+-----------------+----------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:47:00 2025] practical_1_24012011035 
+>select * from production_24012011035;
++---------------+--------+-----------------+-----------------+----------------+
+| production_id | car_id | manufacturer_id | production_date | units_produced |
++---------------+--------+-----------------+-----------------+----------------+
+| P001          | C001   | M01             | 2021-03-10      |            150 |
+| P002          | C002   | M02             | 2023-07-15      |            200 |
+| P004          | C004   | M04             | 2020-06-20      |            120 |
++---------------+--------+-----------------+-----------------+----------------+
+3 rows in set (0.001 sec)
+
+24012011035_ved [Wed Sep 10 22:49:19 2025] practical_1_24012011035 
+>Terminal close -- exit!
+Aborted
+24012011035_VED[(none)] Thu Sep 11 21:43:38 2025 
+>USE practical_1_24012011035
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:44:40 2025 
+>USE practical_1_24012011035;
+Database changed
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:44:50 2025 
+>ALTER TABLE account_24012011035 DROP COLUMN address;
+Query OK, 0 rows affected (0.025 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:47:41 2025 
+>ALTER TABLE account_24012011035 RENAME COLUMN Name TO New_name;
+Query OK, 0 rows affected (0.009 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:50:04 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE City NOT IN ('Ahmedabad', 'Vadodara');
++--------+---------------+---------+-----------+------------+
+| acc_no | New_name      | City    | Balance   | loan_taken |
++--------+---------------+---------+-----------+------------+
+| A001   | patel hiren   | Mehsana |  50000.00 | Yes        |
+| A002   | Patel Ramesh  | Mehsana |  50000.00 | Yes        |
+| A005   | kothari nehal | kherva  | 100000.00 | Yes        |
++--------+---------------+---------+-----------+------------+
+3 rows in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:51:49 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE acc_no = 'A001' AND City = 'Mehsana';
++--------+-------------+---------+----------+------------+
+| acc_no | New_name    | City    | Balance  | loan_taken |
++--------+-------------+---------+----------+------------+
+| A001   | patel hiren | Mehsana | 50000.00 | Yes        |
++--------+-------------+---------+----------+------------+
+1 row in set (0.005 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:53:20 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE acc_no = 'A001' OR City = 'Mehsana';
++--------+--------------+---------+----------+------------+
+| acc_no | New_name     | City    | Balance  | loan_taken |
++--------+--------------+---------+----------+------------+
+| A001   | patel hiren  | Mehsana | 50000.00 | Yes        |
+| A002   | Patel Ramesh | Mehsana | 50000.00 | Yes        |
++--------+--------------+---------+----------+------------+
+2 rows in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:54:41 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE Balance BETWEEN 75000 AND 100000;
++--------+---------------+-----------+-----------+------------+
+| acc_no | New_name      | City      | Balance   | loan_taken |
++--------+---------------+-----------+-----------+------------+
+| A003   | Dave Hardik   | Ahmedabad |  75000.00 | No         |
+| A005   | kothari nehal | kherva    | 100000.00 | Yes        |
++--------+---------------+-----------+-----------+------------+
+2 rows in set (0.002 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:56:09 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE Balance NOT BETWEEN 50000 AND 75000;
++--------+---------------+--------+-----------+------------+
+| acc_no | New_name      | City   | Balance   | loan_taken |
++--------+---------------+--------+-----------+------------+
+| A005   | kothari nehal | kherva | 100000.00 | Yes        |
++--------+---------------+--------+-----------+------------+
+1 row in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:57:15 2025 
+>SELECT * FROM installment_24012011035 
+    -> WHERE AMOUNT IN (5000, 15000, 30000);
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L001    | I001    | 2004-02-02 | 15000.00 |
++---------+---------+------------+----------+
+1 row in set (0.004 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:58:21 2025 
+>SELECT * FROM installment_24012011035 
+    -> WHERE AMOUNT NOT IN (5000, 15000, 30000);
++---------+---------+------------+----------+
+| LOAN_NO | INST_NO | INST_DATE  | AMOUNT   |
++---------+---------+------------+----------+
+| L002    | I002    | 2004-06-18 | 20000.00 |
+| L003    | I003    | 2004-07-15 | 20000.00 |
++---------+---------+------------+----------+
+2 rows in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 21:59:44 2025 
+>SELECT * FROM account_24012011035 
+    -> WHERE New_name LIKE 'D%';
++--------+-------------+-----------+----------+------------+
+| acc_no | New_name    | City      | Balance  | loan_taken |
++--------+-------------+-----------+----------+------------+
+| A003   | Dave Hardik | Ahmedabad | 75000.00 | No         |
++--------+-------------+-----------+----------+------------+
+1 row in set (0.004 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:01:00 2025 
+>SELECT CURDATE() AS System_Date;
++-------------+
+| System_Date |
++-------------+
+| 2025-09-11  |
++-------------+
+1 row in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:02:21 2025 
+>SELECT DATE_ADD(CURDATE(), INTERVAL 15 DAY) AS Date_15_Days_After;
++--------------------+
+| Date_15_Days_After |
++--------------------+
+| 2025-09-26         |
++--------------------+
+1 row in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:03:30 2025 
+>SELECT DATE_SUB(CURDATE(), INTERVAL 20 DAY) AS Date_20_Days_Before;
++---------------------+
+| Date_20_Days_Before |
++---------------------+
+| 2025-08-22          |
++---------------------+
+1 row in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:04:49 2025 
+>SELECT 
+    ->   5*5 AS Multiplication,
+    ->   34+34 AS Addition,
+    ->   1000/300 AS Division,
+    ->   LENGTH('uvpce') AS String_Length,
+    ->   MONTH(CURDATE()) AS Current_Month;
++----------------+----------+----------+---------------+---------------+
+| Multiplication | Addition | Division | String_Length | Current_Month |
++----------------+----------+----------+---------------+---------------+
+|             25 |       68 |   3.3333 |             5 |             9 |
++----------------+----------+----------+---------------+---------------+
+1 row in set (0.004 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:06:26 2025 
+>CREATE TABLE TRANSACTION_24012011035 (
+    ->   Acc_no VARCHAR(5),
+    ->   Tr_date DATE,
+    ->   Amt DECIMAL(10,2),
+    ->   Type_of_tr CHAR(1),
+    ->   Mode_of_pay VARCHAR(10)
+    -> );
+Query OK, 0 rows affected (0.019 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:17:49 2025 
+>
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:17:49 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    -> ('A001', STR_TO_DATE('3-may-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    -> ('A002', STR_TO_DATE('5-july-21', '%d-%b-%y'), 5000, 'W', 'Cheque'),
+    -> ('A003', STR_TO_DATE('12-Aug-21', '%d-%b-%y'), 25000, 'D', 'Cheque'),
+    -> ('A004', STR_TO_DATE('15-may-21', '%d-%b-%y'), 30000, 'D', 'Cheque'),
+    -> ('A005', STR_TO_DATE('22-oct-21', '%d-%b-%y'), 15000, 'W', 'Cash');
+ERROR 1411 (HY000): Incorrect datetime value: '5-july-21' for function str_to_date
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:17:50 2025 
+>
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:18:44 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    -> INSERT INTO TRANSACTION_24012011035 VALUES
+    -> ('A001', STR_TO_DATE('3-May-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    -> ('A002', STR_TO_DATE('5-Jul-21', '%d-%b-%y'), 5000, 'W', 'Cheque'),
+    -> ('A003', STR_TO_DATE('12-Aug-21', '%d-%b-%y'), 25000, 'D', 'Cheque'),
+    -> ('A004', STR_TO_DATE('15-May-21', '%d-%b-%y'), 30000, 'D', 'Cheque'),
+    -> ('A005', STR_TO_DATE('22-Oct-21', '%d-%b-%y'), 15000, 'W', 'Cash');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO TRANSACTION_24012011035 VALUES
+('A001', STR_TO_DATE('3-May-21', '%d-' at line 2
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:18:54 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    ->     -> ('A001', STR_TO_DATE('3-may-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    ->     -> ('A002', STR_TO_DATE('5-july-21', '%d-%b-%y'), 5000, 'W', 'Cheque'),
+    ->     -> ('A003', STR_TO_DATE('12-Aug-21', '%d-%b-%y'), 25000, 'D', 'Cheque'),
+    ->     -> ('A004', STR_TO_DATE('15-may-21', '%d-%b-%y'), 30000, 'D', 'Cheque'),
+    ->     -> ('A005', STR_TO_DATE('22-oct-21', '%d-%b-%y'), 15000, 'W', 'Cash');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('A001', STR_TO_DATE('3-may-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    -> ('A' at line 2
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:20:41 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    -> ('A001', STR_TO_DATE('3-may-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    -> ('A002', STR_TO_DATE('5-july-21', '%d-%b-%y'), 5000, 'W', 'Cheque'),
+    -> ('A003', STR_TO_DATE('12-Aug-21', '%d-%b-%y'), 25000, 'D', 'Cheque'),
+    -> ('A004', STR_TO_DATE('15-may-21', '%d-%b-%y'), 30000, 'D', 'Cheque'),
+    -> ('A005', STR_TO_DATE('22-oct-21', '%d-%b-%y'), 15000, 'W', 'Cash');
+ERROR 1411 (HY000): Incorrect datetime value: '5-july-21' for function str_to_date
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:21:02 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    -> ('A001', STR_TO_DATE('3-May-21', '%d-%b-%y'), 10000, 'D', 'Cash'),
+    -> ('A002', STR_TO_DATE('5-Jul-21', '%d-%b-%y'), 5000, 'W', 'Cheque'),
+    -> ('A003', STR_TO_DATE('12-Aug-21', '%d-%b-%y'), 25000, 'D', 'Cheque'),
+    -> ('A004', STR_TO_DATE('15-May-21', '%d-%b-%y'), 30000, 'D', 'Cheque'),
+    -> ('A005', STR_TO_DATE('22-Oct-21', '%d-%b-%y'), 15000, 'W', 'Cash');
+Query OK, 5 rows affected (0.003 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:21:51 2025 
+>select * from TRANSACTION_24012011035;
++--------+------------+----------+------------+-------------+
+| Acc_no | Tr_date    | Amt      | Type_of_tr | Mode_of_pay |
++--------+------------+----------+------------+-------------+
+| A001   | 2021-05-03 | 10000.00 | D          | Cash        |
+| A002   | 2021-07-05 |  5000.00 | W          | Cheque      |
+| A003   | 2021-08-12 | 25000.00 | D          | Cheque      |
+| A004   | 2021-05-15 | 30000.00 | D          | Cheque      |
+| A005   | 2021-10-22 | 15000.00 | W          | Cash        |
++--------+------------+----------+------------+-------------+
+5 rows in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:23:15 2025 
+>SELECT SUM(Amt) AS Total_Amount FROM TRANSACTION_24012011035;
++--------------+
+| Total_Amount |
++--------------+
+|     85000.00 |
++--------------+
+1 row in set (0.005 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:24:18 2025 
+>SELECT MIN(Amt) AS Min_Amount FROM TRANSACTION_24012011035;
++------------+
+| Min_Amount |
++------------+
+|    5000.00 |
++------------+
+1 row in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:25:55 2025 
+>SELECT MAX(Amt) AS Max_Amount FROM TRANSACTION_24012011035;
++------------+
+| Max_Amount |
++------------+
+|   30000.00 |
++------------+
+1 row in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:26:38 2025 
+>SELECT COUNT(DISTINCT Acc_no) AS Total_Account_Holders 
+    -> FROM TRANSACTION_24012011035;
++-----------------------+
+| Total_Account_Holders |
++-----------------------+
+|                     5 |
++-----------------------+
+1 row in set (0.005 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:27:22 2025 
+>SELECT COUNT(*) AS Cheque_Transactions 
+    -> FROM TRANSACTION_24012011035 
+    -> WHERE Mode_of_pay = 'Cheque';
++---------------------+
+| Cheque_Transactions |
++---------------------+
+|                   3 |
++---------------------+
+1 row in set (0.002 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:28:26 2025 
+>SELECT COUNT(*) AS Non_Deposit_Transactions 
+    -> FROM TRANSACTION_24012011035 
+    -> WHERE Type_of_tr != 'D';
++--------------------------+
+| Non_Deposit_Transactions |
++--------------------------+
+|                        2 |
++--------------------------+
+1 row in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:29:08 2025 
+>SELECT COUNT(*) AS May_Transactions 
+    -> FROM TRANSACTION_24012011035 
+    -> WHERE MONTH(Tr_date) = 5;
++------------------+
+| May_Transactions |
++------------------+
+|                2 |
++------------------+
+1 row in set (0.002 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:29:47 2025 
+>SELECT AVG(Amt) AS Average_Amount FROM TRANSACTION_24012011035;
++----------------+
+| Average_Amount |
++----------------+
+|   17000.000000 |
++----------------+
+1 row in set (0.001 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:31:51 2025 
+>SELECT POWER(4, 4) AS Power_Result;
++--------------+
+| Power_Result |
++--------------+
+|          256 |
++--------------+
+1 row in set (0.003 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:32:31 2025 
+>SELECT SQRT(25) AS Square_Root;
++-------------+
+| Square_Root |
++-------------+
+|           5 |
++-------------+
+1 row in set (0.000 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:33:26 2025 
+>SELECT 
+    ->   LOWER('HELLO') AS Lower_Example,
+    ->   CONCAT(UPPER(SUBSTRING('hello', 1, 1)), LOWER(SUBSTRING('hello', 2))) AS  Initcap_Example,
+    ->   UPPER('hello') AS Upper_Example,
+    ->   SUBSTRING('Database', 1, 4) AS Substr_Example,
+    ->   LENGTH('Database') AS Length_Example,
+    ->   LTRIM('   Hello') AS Ltrim_Example,
+    ->   RTRIM('Hello   ') AS Rtrim_Example,
+    ->   LPAD('Hello', 10, '*') AS Lpad_Example,
+    ->   RPAD('Hello', 10, '*') AS Rpad_Example;
++---------------+-----------------+---------------+----------------+----------------+---------------+---------------+--------------+--------------+
+| Lower_Example | Initcap_Example | Upper_Example | Substr_Example | Length_Example | Ltrim_Example | Rtrim_Example | Lpad_Example | Rpad_Example |
++---------------+-----------------+---------------+----------------+----------------+---------------+---------------+--------------+--------------+
+| hello         | Hello           | HELLO         | Data           |              8 | Hello         | Hello         | *****Hello   | Hello*****   |
++---------------+-----------------+---------------+----------------+----------------+---------------+---------------+--------------+--------------+
+1 row in set (0.004 sec)
+
+24012011035_VED[practical_1_24012011035] Thu Sep 11 22:38:53 2025 
+>exit

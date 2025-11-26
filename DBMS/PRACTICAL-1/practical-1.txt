@@ -1,0 +1,405 @@
+mysql> prompt 24012011035_ved [\d] \D \n>
+PROMPT set to '24012011035_ved [\d] \D \n>'
+24012011035_ved [(none)] Fri Sep 26 19:50:52 2025 
+>show databases;
++-------------------------+
+| Database                |
++-------------------------+
+| Class_Info              |
+| college                 |
+| convergence_db          |
+| information_schema      |
+| mysql                   |
+| performance_schema      |
+| practical1              |
+| practical_1_24012011035 |
+| practical_2             |
+| practical_2_24012011035 |
+| practical_3             |
+| practical_4             |
+| Stu_Info                |
+| students                |
+| sys                     |
+| testdb                  |
+| ved                     |
+| xyz                     |
++-------------------------+
+18 rows in set (0.032 sec)
+
+24012011035_ved [(none)] Fri Sep 26 19:51:03 2025 
+>use practical practical_2_24012011035; 
+ERROR 1049 (42000): Unknown database 'practical'
+24012011035_ved [(none)] Fri Sep 26 19:51:28 2025 
+>use practical_2_24012011035;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+24012011035_ved [practical_2_24012011035] Fri Sep 26 19:51:53 2025 
+>SELECT * FROM Employees
+    -> WHERE Department = 'HR' AND Salary > 50000;
+ERROR 1146 (42S02): Table 'practical_2_24012011035.employees' doesn't exist
+24012011035_ved [practical_2_24012011035] Fri Sep 26 21:55:58 2025 
+>INSERT INTO ACCOUNT_24012011035 values
+    ->     -> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    ->     -> ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    ->     -> ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    ->     -> ('A004','Soni Hetal','Ahmedabad',100000,'No'),
+    ->     -> ('A005','Sony Atul','Vadodara',100000,'Yes');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    -> ('A002','Patel Ramesh','' at line 2
+24012011035_ved [practical_2_24012011035] Fri Sep 26 21:57:15 2025 
+> INSERT INTO ACCOUNT_24012011035 values
+    ->     -> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    ->     -> ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    ->     -> ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    ->     -> ('A004','Soni Hetal','Ahmedabad',100000,'No'),
+    ->     -> ('A005','Sony Atul','Vadodara',100000,'Yes')
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    -> ('A002','Patel Ramesh','' at line 2
+24012011035_ved [practical_2_24012011035] Fri Sep 26 21:57:29 2025 
+>INSERT INTO ACCOUNT_24012011035 values
+    ->     ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    ->     ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    ->     ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    ->     (‘A004','Soni Hetal','Ahmedabad',100000,'No'),
+    '>     ('A005','Sony Atul','Vadodara',100000,'Yes');
+    '> \c
+    '> ^C
+24012011035_ved [practical_2_24012011035] Fri Sep 26 21:59:02 2025 
+>INSERT INTO ACCOUNT_24012011035 values
+    ->     ('A001','Patel Jigar','Mehsana',50000,'Yes'),
+    ->     ('A002','Patel Ramesh','Mehsana',50000,'Yes'),
+    ->     ('A003','Dave Hardik','Ahmedabad',75000,'No'),
+    ->     (‘A004','Soni Hetal','Ahmedabad',100000,'No'),
+    '> ^C
+24012011035_ved [practical_2_24012011035] Fri Sep 26 21:59:21 2025 
+>CREATE TABLE LOAN_24012011035(
+    -> loan_no varchar(5),
+    -> acc_no varchar (5),
+    -> loan_amt Decimal(10,2),
+    -> intrest_rate(5,2),
+    -> loan_date Date,
+    -> remaining_loan DECIMAL(10,2)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(5,2),
+loan_date Date,
+remaining_loan DECIMAL(10,2)
+)' at line 5
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:12:39 2025 
+>CREATE TABLE LOAN_24012011035(
+    ->  loan_no VARCHAR(5),
+    -> acc_no VARCHAR(5),
+    -> loan_amt DECIMAL(10,2),
+    -> interest_rate DECIMAL(5,2), 
+    -> loan_date DATE,
+    -> remaining_loan DECIMAL(10,2)
+    -> ); 
+Query OK, 0 rows affected (0.048 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:14:34 2025 
+>INSERT INTO LOAN_24012011035 VALUES
+    -> ('L001','A001',100000,7,STR_TO_DATE('01-JAN-2004','%d-%b-%Y'),75000),
+    -> ('L002','A002',300000,9,STR_TO_DATE('18-MAY-2004','%d-%b-%Y'),150000),
+    -> ('L003','A005',500000,11,STR_TO_DATE('15-JUN-2004','%d-%b-%Y'),300000);
+Query OK, 3 rows affected (0.011 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:15:27 2025 
+>CREATE TABLE INSTALLMENT_24012011035(
+    ->  LOAN_NO VARCHAR(5),
+    -> INST_NO VARCHAR(5),
+    -> INST_DATE DATE,
+    ->  AMOUNT DECIMAL(10,2));
+Query OK, 0 rows affected (0.008 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:16:09 2025 
+>INSERT INTO INSTALLMENT_24012011035 VALUES
+    -> ('L001','I001',STR_TO_DATE('02-FEB-2004','%d-%b-%Y'),15000),
+    -> ('L002','I002',STR_TO_DATE('18-JUN-2004','%d-%b-%Y'),20000),
+    -> ('L003','I003',STR_TO_DATE('15-JUL-2004','%d-%b-%Y'),20000);
+Query OK, 3 rows affected (0.002 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:16:45 2025 
+>alter table account_24012011035 drop columnaddress;
+ERROR 1091 (42000): Can't DROP 'columnaddress'; check that column/key exists
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:18:24 2025 
+>alter table account_24012011035 drop column address;
+ERROR 1091 (42000): Can't DROP 'address'; check that column/key exists
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:19:21 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:02 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:03 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:03 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:04 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:04 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:05 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:05 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:05 2025 
+>
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:20:05 2025 
+>create table transaction_24012011035(
+    -> Acc_no varchar(5),
+    -> Tr_date DATE,
+    -> Amt DECIMAL(10,2),
+    -> Type_of_tr CHAR(1),
+    -> Mode_of_pay VARCHAR(10)
+    -> );
+Query OK, 0 rows affected (0.010 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:32:06 2025 
+>INSERT INTO TRANSACTION_24012011035 VALUES
+    -> ('A001',STR_TO_DATE('3-May-21','%d-%b-%y'),10000,'D','Cash'),
+    -> ('A002',STR_TO_DATE('5-Jul-21','%d-%b-%y'),5000,'W','Cheque'),
+    -> ('A003',STR_TO_DATE('12-Aug-21','%d-%b-%y'),25000,'D','Cheque'),
+    -> ('A004',STR_TO_DATE('15-May-21','%d-%b-%y'),30000,'D','Cheque'),
+    -> ('A005',STR_TO_DATE('22-Oct-21','%d-%b-%y'),15000,'W','Cash');
+Query OK, 5 rows affected (0.003 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:38:54 2025 
+>select * from transaction_24012011035;
++--------+------------+----------+------------+-------------+
+| Acc_no | Tr_date    | Amt      | Type_of_tr | Mode_of_pay |
++--------+------------+----------+------------+-------------+
+| A001   | 2021-05-03 | 10000.00 | D          | Cash        |
+| A002   | 2021-07-05 |  5000.00 | W          | Cheque      |
+| A003   | 2021-08-12 | 25000.00 | D          | Cheque      |
+| A004   | 2021-05-15 | 30000.00 | D          | Cheque      |
+| A005   | 2021-10-22 | 15000.00 | W          | Cash        |
++--------+------------+----------+------------+-------------+
+5 rows in set (0.007 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:39:17 2025 
+>SELECT Type_of_tr, SUM(amt) as total_salary
+    -> from transaction_24012011035
+    -> group by type_of_tr;
++------------+--------------+
+| Type_of_tr | total_salary |
++------------+--------------+
+| D          |     65000.00 |
+| W          |     20000.00 |
++------------+--------------+
+2 rows in set (0.006 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:42:50 2025 
+>select min(amt) as minimum_salary
+    -> from transaction_24012011035;
++----------------+
+| minimum_salary |
++----------------+
+|        5000.00 |
++----------------+
+1 row in set (0.003 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:43:59 2025 
+>select max(amt) as maximum_salary
+    -> from transaction_24012011035;
++----------------+
+| maximum_salary |
++----------------+
+|       30000.00 |
++----------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:44:46 2025 
+>select count(acc_no) as total_acc_holders
+    -> from transaction_24012011035;
++-------------------+
+| total_acc_holders |
++-------------------+
+|                 5 |
++-------------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:45:26 2025 
+>select count(acc_no) as total_acc_holders
+    -> from transaction_24012011035 where mode_of pay = 'cheque';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pay = 'cheque'' at line 2
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:46:36 2025 
+>select count(acc_no) as total_acc_holders
+    -> from transaction_24012011035 where mode_of_pay = 'cheque';
++-------------------+
+| total_acc_holders |
++-------------------+
+|                 3 |
++-------------------+
+1 row in set (0.003 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:47:22 2025 
+>select count(acc_no) as total_acc_holders
+    -> from transaction_24012011035 where type_of_tr != 'D';
++-------------------+
+| total_acc_holders |
++-------------------+
+|                 2 |
++-------------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:48:12 2025 
+>select count(acc_no) as total_acc_holders
+    -> from transaction_24012011035 where monthname(tr_date) = 'may';
++-------------------+
+| total_acc_holders |
++-------------------+
+|                 2 |
++-------------------+
+1 row in set (0.002 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:49:39 2025 
+>select avg(amt) as average_salary
+    -> from transaction_24012011035;
++----------------+
+| average_salary |
++----------------+
+|   17000.000000 |
++----------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:50:26 2025 
+>select pow(4,4) as result;
++--------+
+| result |
++--------+
+|    256 |
++--------+
+1 row in set (0.003 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:50:44 2025 
+>select sqrt(25) as result;
++--------+
+| result |
++--------+
+|      5 |
++--------+
+1 row in set (0.000 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:51:01 2025 
+>select lower(mode_of_pay) from transaction_24012011035;
++--------------------+
+| lower(mode_of_pay) |
++--------------------+
+| cash               |
+| cheque             |
+| cheque             |
+| cheque             |
+| cash               |
++--------------------+
+5 rows in set (0.003 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:51:28 2025 
+>select upper(mode_of_pay) from transaction_24012011035;
++--------------------+
+| upper(mode_of_pay) |
++--------------------+
+| CASH               |
+| CHEQUE             |
+| CHEQUE             |
+| CHEQUE             |
+| CASH               |
++--------------------+
+5 rows in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:51:58 2025 
+>select length('ved joshi') as string_length;
++---------------+
+| string_length |
++---------------+
+|             9 |
++---------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:52:26 2025 
+>select substr('ved joshi',5) as substring;
++-----------+
+| substring |
++-----------+
+| joshi     |
++-----------+
+1 row in set (0.000 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:53:13 2025 
+>select ltrim('            ved joshi') as resukt;
++-----------+
+| resukt    |
++-----------+
+| ved joshi |
++-----------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:55:06 2025 
+>>select ltrim('            ved joshi') as result;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>select ltrim('            ved joshi') as result' at line 1
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:55:31 2025 
+>select ltrim('            ved joshi') as result;
++-----------+
+| result    |
++-----------+
+| ved joshi |
++-----------+
+1 row in set (0.000 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:56:02 2025 
+>select rtrim('ved joshi  ') as result;
++-----------+
+| result    |
++-----------+
+| ved joshi |
++-----------+
+1 row in set (0.000 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:56:43 2025 
+>select lpad('ved joshi',13,'ved') as result;
++---------------+
+| result        |
++---------------+
+| vedvved joshi |
++---------------+
+1 row in set (0.001 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:57:24 2025 
+>select rpad('ved joshi',15,'svj63') as result;
++-----------------+
+| result          |
++-----------------+
+| ved joshisvj63s |
++-----------------+
+1 row in set (0.000 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 22:58:11 2025 
+>desc transaction_24012011035;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| Acc_no      | varchar(5)    | YES  |     | NULL    |       |
+| Tr_date     | date          | YES  |     | NULL    |       |
+| Amt         | decimal(10,2) | YES  |     | NULL    |       |
+| Type_of_tr  | char(1)       | YES  |     | NULL    |       |
+| Mode_of_pay | varchar(10)   | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+5 rows in set (0.056 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 23:28:53 2025 
+>>select rpad('ved joshi',15,'ved35') as result;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>select rpad('ved joshi',15,'ved35') as result' at line 1
+24012011035_ved [practical_2_24012011035] Fri Sep 26 23:50:03 2025 
+>select rpad('ved joshi',15,'ved35') as result;
++-----------------+
+| result          |
++-----------------+
+| ved joshived35v |
++-----------------+
+1 row in set (0.003 sec)
+
+24012011035_ved [practical_2_24012011035] Fri Sep 26 23:50:12 2025 
+>Terminal close -- exit!
+Aborted
